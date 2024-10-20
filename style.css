@@ -1,0 +1,111 @@
+/* font-family: "Montserrat", sans-serif; */
+/* font-family: 'Panton', sans-serif; */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    color: rgba(35, 31, 32, 1);
+}
+html {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+button {
+    padding: 0;
+    border: none;
+}
+input:focus, textarea:focus, select:focus {
+	outline: none;
+}
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1110px;
+}
+/* --------------------------------------------------------------- */
+/* ------------------------Navigation----------------------------- */
+
+/* .header {
+}
+.header__inner {
+}
+.nav__header {
+}
+.logo__container {
+}
+.logo {
+} */
+.logo__title {
+    font-size: 39px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Panton', sans-serif;
+}
+.logo__p {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.delivery__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.delivery__title {
+    font-size: 18px;
+    font-weight: 600;
+}
+.delivery__title span {
+    color: rgba(255, 46, 101, 1);
+}
+.delivery__p {
+    font-size: 14px;
+    font-weight: 600;
+}
+.phone__btn {
+    background-color: rgba(243, 243, 247, 1);
+    border-radius: 29px;
+    color: rgba(105, 111, 122, 1);
+    width: 180px;
+    height: 42px;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.phone {
+    font-size: 26px;
+    font-weight: 700;
+    color: rgba(255, 46, 101, 1);
+}
+.nav__options li {
+    color: rgba(14, 12, 13, 1);
+    font-size: 14px;
+    font-weight: 700;
+}
+/* .options__container {
+} */
+.enter {
+    color: rgba(105, 111, 122, 1);
+    font-weight: 700;
+}
+.basket {
+    width: 160px;
+    height: 42px;
+    background-color: rgba(255, 46, 101, 1);
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    padding: 7px;
+    line-height: 28px;
+    border-radius: 8px;
+}
