@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YO BAO</title>
+    <link rel="icon" href="img/logo.svg">
     <link rel="stylesheet" href="style.css">
-
+    <!--     Fonts       -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
     <link href="https://fonts.cdnfonts.com/css/panton" rel="stylesheet">
+    <!--      Swiper     -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
-
     <header class="header">
         <div class="container">
             <div class="header__inner">
+                <!-- -----------------Header Logo (Нaвигация логотип)-------------------------------------  -->
                 <nav class="nav__header">
                     <div class="logo__container">
                         <a href="#" title="YO BAO" class="logo"><img src="img/logo.svg" alt=""></a> 
@@ -27,13 +30,12 @@
                         <div class="delivery__title">Доставка пасты <span>Москва</span></div>
                         <div class="delivery__p">Время доставки от 31 мин</div>
                     </div>
-
                     <div class="phone__container">
                         <div class="phone__btn"><a href="#" title="Заказать звонок">Заказать звонок</a></div>
                         <div class="phone">8 800 333-36-62</div>
                     </div>
                 </nav>
-
+                <!-- -----------------------Header Options (Опции)------------------------------  -->
                 <nav class="nav__options">
                     <ul class="options__container">
                         <li><a href="#" title="Паста">Паста</a></li>
@@ -57,7 +59,240 @@
     </header>
 
     <main class="main">
+        <section class="prewiev">
+            <!-- -----------------------------Slider (Слайдер)----------------------------------  -->
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide__container">
+                            <img src="img/main_card2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide__container">
+                            <img src="img/main_card2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide__container">
+                            <img src="img/main_card2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide__container">
+                            <img src="img/main_card2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide__container">
+                            <img src="img/main_card2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide__container">
+                            <img src="img/main_card2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-scrollbar"></div> -->
+            </div>
+        </section>
+        <section class="new">
+            <!-- --------------------------New (Новинки)----------------------------------------  -->
+            <div class="container">
+                <h2 class="new__section__title">Новинки</h2>
+                <div class="new__container ">
+                    <a href="#" title="Купить" class="new__card">
+                        <img src="img/pizza1.png" alt="" class="new__img">
+                        <h3 class="new__card__title">Карбонара</h3>
+                        <p class="new__price">От 120 ₽</p>
+                    </a>
+                    <a href="#" title="Купить" class="new__card">
+                        <img src="img/pizza1.png" alt="" class="new__img">
+                        <h3 class="new__card__title">Карбонара</h3>
+                        <p class="new__price">От 120 ₽</p>
+                    </a>
+                    <a href="#" title="Купить" class="new__card">
+                        <img src="img/pizza1.png" alt="" class="new__img">
+                        <h3 class="new__card__title">Карбонара</h3>
+                        <p class="new__price">От 120 ₽</p>
+                    </a>
+                    <a href="#" title="Купить" class="new__card">
+                        <img src="img/pizza1.png" alt="" class="new__img">
+                        <h3 class="new__card__title">Карбонара</h3>
+                        <p class="new__price">От 120 ₽</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="menu__one">
+            <!-- --------------------------Menu One (Меню 1)------------------------------------  -->
+            <div class="container">
+                <h2 class="menu__title">Паста</h2>
+                <div class="menu__container">
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="menu__two">
+            <!-- --------------------------Menu Two (Меню 2)--------------------------------------  -->
+            <div class="container">
+                <h2 class="menu__title">Паста</h2>
+                <div class="menu__container">
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="menu__three">
+            <!-- --------------------------Menu Three (Меню 3)--------------------------------------  -->
+            <div class="container">
+                <h2 class="menu__title">Паста</h2>
+                <div class="menu__container menu__three ">
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                    <div class="menu__card">
+                        <img src="img/pizza2.png" alt="" class="menu__card__img">
+                        <h2 class="menu__card__title">С креветками и трюфелями</h2>
+                        <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="menu__card__price"> От 600 ₽</div>
+                        <a href="#" title="В корзину" class="menu__card__basket">В корзину</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
