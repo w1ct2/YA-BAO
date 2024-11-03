@@ -204,6 +204,16 @@ input:focus, textarea:focus, select:focus {
     padding: 14px 17px;
     align-items: center;
     column-gap: 25px;
+    border-radius: 10px;
+}
+.new__card__first {
+    position: relative;
+}
+.onion {
+    position: absolute;
+    z-index: -1;
+    left: -60px;
+    bottom: -40px;
 }
 .new__card__title {
     font-size: 18px;
@@ -212,6 +222,7 @@ input:focus, textarea:focus, select:focus {
 .new__img {
     max-width: 70px;
     max-height: 70px;
+    border-radius: 10px;
 
     grid-row: 1/3;
 }
@@ -424,6 +435,13 @@ input:focus, textarea:focus, select:focus {
     grid-template-rows: 1fr 32px;
     column-gap: 92px;
     row-gap: 45px;
+    position: relative;
+}
+.noodles {
+    position: absolute;
+    bottom: -80px;
+    right: -120px;
+    z-index: -1;
 }
 
 
@@ -485,6 +503,7 @@ input:focus, textarea:focus, select:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 1);
 }
 .right__link {
     width: 216px;
@@ -498,6 +517,7 @@ input:focus, textarea:focus, select:focus {
     opacity: 80%;
     font-size: 13px;
     font-weight: 700;
+    background-color: rgba(255, 255, 255, 1);
 }
 .right__phone {
     color: rgba(255, 46, 101, 1);
