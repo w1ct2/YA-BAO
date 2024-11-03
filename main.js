@@ -1,4 +1,4 @@
-new Swiper('.swiper', {
+new Swiper('.prewiev__slider', {
     grabCursor: true,
     loop: true,
     autoplay: {
@@ -14,9 +14,19 @@ new Swiper('.swiper', {
         scale: 0.8,
         depth: 200,
     },
+    simulateTouch: false,
 });
 
-// let container = document.querySelector(".swiper");
-// let images = container.querySelectorAll("img");
-// images[0].classList.toggle("opacity");
-// images[images.length - 1].classList.toggle("opacity");
+new Swiper('.options', {
+    loop: true,
+    slidesPerView: 5,
+    slidesPerGroup: 1,
+    mousewheel: {
+        sensitivity: 1,
+    },
+    // breakpoints: {}
+})
+
+// document.getElementsById('options__item1').addEventListener('click', function(){
+//     document.querySelector('menu__one').scrollIntoView({ behavior: 'smooth' });
+// }); 
