@@ -19,6 +19,9 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+body.active {
+    overflow: hidden;
+}
 a {
     text-decoration: none;
     color: inherit;
@@ -62,6 +65,7 @@ input:focus, textarea:focus, select:focus {
     align-items: center;
     margin-top: 14px;
     gap: 10px;
+    position: relative;
 }
 .logo__container {
     display: grid;
@@ -131,6 +135,7 @@ input:focus, textarea:focus, select:focus {
     align-items: center;
     margin-top: 7px;
     gap: 20px;
+    align-items: center;
 }
 .options__container {
     display: flex;
@@ -167,6 +172,202 @@ input:focus, textarea:focus, select:focus {
     padding: 7px;
     line-height: 28px;
     border-radius: 8px;
+}
+
+/* --------------------------------------------------------------- */
+/* ------------------------Burger menu---------------------------- */
+.burger__btn {
+    width: 40px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;
+    display: none;
+}
+.burger__btn span {
+    height: 3px;
+    width: 38px;
+    transform: scale(1);
+    background-color: rgba(255, 46, 101, 1);
+}
+.burger__btn::after, .burger__btn::before {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 38px;
+    background-color: rgba(255, 46, 101, 1);
+    transition: all 0.5s ease 0s;
+}
+.burger__btn::before {
+    bottom: 0;
+}
+.burger__btn::after {
+    top: 0;
+}
+.burger__btn.active span {
+    transform: scale(0);
+}
+.burger__btn.active::after {
+    top: 48%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.burger__btn.active::before{
+    bottom: 48%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+
+
+.blackout {
+    display: none;
+}
+.blackout.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    opacity: .4;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    animation: test .5s forwards;
+    cursor: pointer;
+}
+@keyframes test {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .4;
+    }
+}
+
+
+.burger__options{
+    position: fixed;
+    left: -100%;
+    transition: all 0.5s ease 0s;
+}
+.burger__options.active {
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 46, 101, 1);
+    width: 360px;
+    height: 100vh;
+    align-items: center;
+    transition: all 0.5s ease 0s;
+}
+
+
+.burger__span {
+    height: 2px;
+    width: 340px;
+    background-color: rgba(255, 255, 255, 1);
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+.burger__close {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-left: 310px;
+}
+.burger__close::after, .burger__close::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 1);
+}
+.burger__close::after {
+    bottom: 15px;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.burger__close::before  {
+    top: 20px;
+    transform: rotate(45deg) translate(0, 50%);
+}
+
+
+.burger__options__container {
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.basket.burger {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(255, 46, 101, 1);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.enter.burger {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(255, 46, 101, 1);
+    width: 160px;
+    height: 42px;
+    padding: 7px;
+    line-height: 28px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+.phone__btn.burger {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(255, 46, 101, 1);
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 160px;
+    height: 42px;
+    grid-column: 1/3;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.phone.burger {
+    color: rgba(255, 255, 255, 1);
+    grid-column: 1/3;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    margin-bottom: 20px;
+}
+.burger__img {
+    border-radius: 13px;
+    width: 360px;
+}
+.burger__img  img{
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1000px) {
+    .burger__btn {
+        display: flex;
+    }
+    .enter__basket__container {
+        display: none;
+    }
+    .phone__container {
+        display: none;
+    }
 }
 /* --------------------------------------------------------------- */
 /* ------------------------Prewiev-------------------------------- */
