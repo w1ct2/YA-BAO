@@ -15,6 +15,25 @@ new Swiper('.prewiev__slider', {
         depth: 200,
     },
     simulateTouch: false,
+    // breakpoints: {
+    //     700: {
+    //         grabCursor: true,
+    //         loop: true,
+    //         autoplay: {
+    //             delay: 3000,
+    //         },
+    //         speed: 2000,
+    //         slidesPerView: 3,
+    //         effect: 'coverflow',
+    //         coverflowEffect: {
+    //             rotate: 0,
+    //             stretch: 0,
+    //             slideShadows: false,
+    //             scale: 0.8,
+    //             depth: 200,
+    //         },
+    //     }
+    // }
 });
 new Swiper('.options', {
     loop: true,
@@ -23,7 +42,6 @@ new Swiper('.options', {
     mousewheel: {
         sensitivity: 1,
     },
-    // breakpoints: {}
 });
 
 const burgerBtn = document.querySelector('.burger__btn');
