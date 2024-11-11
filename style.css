@@ -704,6 +704,193 @@ input:focus, textarea:focus, select:focus {
     }
 }
 /* --------------------------------------------------------------- */
+/* -------------------------Purchase page------------------------- */
+.purchase__page {
+    display: none;
+}
+.purchase__page.active {
+    display: flex;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    width: 960px;
+    height: 610px;
+    background-color: #fff;
+    border-radius: 22px;
+    z-index: 4;
+    animation: testTwo .8s forwards;
+}
+@keyframes testTwo {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.purchase__page-img {
+    max-height: 500px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.purchase__page-img img {
+    width: 100%;
+    height: auto;
+}
+.purchase__page-container {
+    margin: 30px 0 40px;
+}
+.purchase__page-title {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 28px;
+}
+.purchase__page-p {
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(104, 100, 102, 1);
+}
+.purchase__page-article {
+    line-height: 28px;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(104, 100, 102, 1);
+    opacity: 60%;
+}
+.purchase__page-article span{
+    border-bottom-style: dashed;
+}
+.purchase__page-first__choice {
+    margin: 9px 45px 9px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 13px;
+}
+.purchase__page-first__choice-item {
+    width: 100px;
+    height: 35px;
+    background-color: rgba(243, 243, 247, 1);
+    color: rgba(130, 135, 146, 1);
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.purchase__page-second__choice {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 45px;
+    margin-bottom: 19px;
+}
+.purchase__page-second__choice-item {
+    width: 150px;
+    height: 35px;
+    background-color: rgba(243, 243, 247, 1);
+    color: rgba(130, 135, 146, 1);
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.purchase__page-third__choice {
+    height: 183px;
+    width: 328px;
+}
+.swiper.purchase__page-third__choice {
+    margin-left: 0;
+}
+/* .purchase__page-third__choice-container {
+    
+} */
+.purchase__page-third__choice-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 11px;
+}
+.purchase__page-third__choice-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 12px;
+    border: 1.5px solid rgba(226, 226, 233, 1);
+    width: 100px;
+    height: 160px;
+    cursor: pointer;
+}
+.third__choice-img {
+    width: 65px;
+    height: 70px;
+    margin-top: 14px;
+}
+.third__choice-img img {
+    width: 100%;
+    height: auto;
+}
+.third__choice-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.third__choice-price {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 17px;
+    color: rgba(255, 46, 101, 1);
+}
+.purchase__page-btn {
+    margin-top: 100px;
+    width: 340px;
+    height: 60px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 1);
+    font-size: 15px;
+    background-color: rgba(255, 46, 101, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    z-index: 2;
+}
+/* .blackout.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    opacity: .4;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    animation: test .5s forwards;
+    cursor: pointer;
+}
+@keyframes test {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .4;
+    }
+} */
+/* --------------------------------------------------------------- */
 /* -------------------------Stocks-------------------------------- */
 /* .stocks {
     ...
