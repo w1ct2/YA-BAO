@@ -47,6 +47,13 @@ burgerBtn.addEventListener('click', () => {
     body.classList.toggle('active')
     blackout.classList.toggle('active')
 })
+burgerClose.addEventListener('click', () => {
+    burgerOptions.classList.remove('active')
+    blackout.classList.remove('active')
+    burgerBtn.classList.remove('active')
+    body.classList.remove('active')
+})
+
 menuCardBasket.addEventListener('click', () => {
     body.classList.toggle('active')
     blackout.classList.toggle('active')
@@ -59,10 +66,4 @@ blackout.addEventListener('click', () => {
     burgerBtn.classList.remove('active')
     body.classList.remove('active')
     purchasePage.classList.remove('active')
-})
-burgerClose.addEventListener('click', () => {
-    burgerOptions.classList.remove('active')
-    blackout.classList.remove('active')
-    burgerBtn.classList.remove('active')
-    body.classList.remove('active')
 })

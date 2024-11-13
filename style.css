@@ -773,7 +773,7 @@ input:focus, textarea:focus, select:focus {
     justify-content: space-between;
     gap: 13px;
 }
-.purchase__page-first__choice-item {
+.purchase__page-first__choice label { 
     width: 100px;
     height: 35px;
     background-color: rgba(243, 243, 247, 1);
@@ -786,13 +786,27 @@ input:focus, textarea:focus, select:focus {
     justify-content: center;
     cursor: pointer;
 }
+.purchase__page-first__choice input[type=radio] {
+    display: none;
+}
+.purchase__page-first__choice input[type=radio]:checked + label {
+    background-color: rgba(255, 46, 101, 1);
+    color: rgba(227, 236, 245, 1);
+}
 .purchase__page-second__choice {
     display: flex;
     justify-content: space-between;
     margin-right: 45px;
     margin-bottom: 19px;
 }
-.purchase__page-second__choice-item {
+.purchase__page-second__choice input[type=radio] {
+    display: none;
+}
+.purchase__page-second__choice input[type=radio]:checked + label {
+    background-color: rgba(255, 46, 101, 1);
+    color: rgba(227, 236, 245, 1);
+}
+.purchase__page-second__choice label{
     width: 150px;
     height: 35px;
     background-color: rgba(243, 243, 247, 1);
@@ -817,11 +831,11 @@ input:focus, textarea:focus, select:focus {
 } */
 .purchase__page-third__choice-row {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     gap: 11px;
+    box-sizing: border-box;
 }
-.purchase__page-third__choice-item {
+.purchase__page-third__choice label{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -831,6 +845,12 @@ input:focus, textarea:focus, select:focus {
     width: 100px;
     height: 160px;
     cursor: pointer;
+}
+.purchase__page-third__choice input[type=radio] {
+    display: none;
+}
+.purchase__page-third__choice input[type=radio]:checked + label {
+    border: 2.5px solid rgba(255, 46, 101, 1);
 }
 .third__choice-img {
     width: 65px;
@@ -867,29 +887,6 @@ input:focus, textarea:focus, select:focus {
     border-radius: 8px;
     z-index: 2;
 }
-/* .blackout.active {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgb(0, 0, 0);
-    opacity: .4;
-    z-index: 2;
-    width: 100vw;
-    height: 100vh;
-    animation: test .5s forwards;
-    cursor: pointer;
-}
-@keyframes test {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: .4;
-    }
-} */
 /* --------------------------------------------------------------- */
 /* -------------------------Stocks-------------------------------- */
 /* .stocks {

@@ -165,87 +165,77 @@
                         <p class="menu__card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
                         <div class="menu__card__price"> От 600 ₽</div>
                         <div class="menu__card__basket">В корзину</div>
-
                         <div class="purchase__page">
                             <div class="purchase__page-img"><img src="img/pasta.png" alt=""></div>
                             <div class="purchase__page-container">
                                 <div class="purchase__page-title">С креветками и трюфелями</div>
                                 <p class="purchase__page-p">25 см, традиционное тесто, 360 г</p>
                                 <article class="purchase__page-article">Моцарелла, соус <span>альфредо</span></article>
-                                <div class="purchase__page-first__choice">
-                                    <div class="purchase__page-first__choice-item">Маленькая</div>
-                                    <div class="purchase__page-first__choice-item">Средняя</div>
-                                    <div class="purchase__page-first__choice-item">Большая</div>
-                                </div>
-                                <div class="purchase__page-second__choice">
-                                    <div class="purchase__page-second__choice-item">Традиционное</div>
-                                    <div class="purchase__page-second__choice-item">Тонкое</div>
-                                </div>
+                                <form class="purchase__page-first__choice">
+                                    <input type="radio" name="firstChoice" id="first1" value="1" checked></input>
+                                    <label for="first1">Маленькая</label>
+                                    <input type="radio" name="firstChoice" id="first2" value="2"></input>
+                                    <label for="first2">Средняя</label>
+                                    <input type="radio" name="firstChoice" id="first3" value="3"></input>
+                                    <label for="first3">Большая</label>
+                                </form>
+                                <form class="purchase__page-second__choice">
+                                    <input type="radio" name="secondChoice" id="second1" value="1" checked></input>
+                                    <label for="second1">Традиционное</label>
+                                    <input type="radio" name="secondChoice" id="second2" value="2"></input>
+                                    <label for="second2">Тонкое</label>
+                                </form>
                                 <div class="swiper purchase__page-third__choice">
                                     <div class="swiper-wrapper purchase__page-third__choice-container">
                                         <div class="swiper-slide">
-                                            <div class="purchase__page-third__choice-row">
-                                                <div class="purchase__page-third__choice-item">
+                                            <form class="purchase__page-third__choice-row">
+                                                <input type="radio" name="thirdChoice" value="1" id="third1" checked>
+                                                <label for="third1">
                                                     <div class="third__choice-img"><img src="img/purchasePage1.png" alt=""></div>
                                                     <h3 class="third__choice-title">Острый халапенью</h3>
                                                     <p class="third__choice-price">от 120 ₽</p>
-                                                </div>
-                                                <div class="purchase__page-third__choice-item">
+                                                </label>
+                                                <input type="radio" name="thirdChoice" value="2" id="third2">
+                                                <label for="third2">
                                                     <div class="third__choice-img"><img src="img/purchasePage2.png" alt=""></div>
                                                     <h3 class="third__choice-title">Острый халапенью</h3>
                                                     <p class="third__choice-price">от 120 ₽</p>
-                                                </div>
-                                                <div class="purchase__page-third__choice-item">
+                                                </label>
+                                                <input type="radio" name="thirdChoice" value="3" id="third3">
+                                                <label for="third3">
                                                     <div class="third__choice-img"><img src="img/purchasePage3.png" alt=""></div>
                                                     <h3 class="third__choice-title">Острый халапенью</h3>
                                                     <p class="third__choice-price">от 120 ₽</p>
-                                                </div>
-                                            </div>
+                                                </label>
+                                            </form>
                                         </div>
                                         <div class="swiper-slide">
-                                            <div class="purchase__page-third__choice-row">
-                                                <div class="purchase__page-third__choice-item">
-                                                    <div class="third__choice-img"><img src="img/purchasePage1.png" alt=""></div>
-                                                    <h3 class="third__choice-title">Острый халапенью</h3>
-                                                    <p class="third__choice-price">от 120 ₽</p>
-                                                </div>
-                                                <div class="purchase__page-third__choice-item">
-                                                    <div class="third__choice-img"><img src="img/purchasePage2.png" alt=""></div>
-                                                    <h3 class="third__choice-title">Острый халапенью</h3>
-                                                    <p class="third__choice-price">от 120 ₽</p>
-                                                </div>
-                                                <div class="purchase__page-third__choice-item">
+                                            <form class="purchase__page-third__choice-row">
+                                                <input type="radio" name="thirdChoice" value="4" id="third4" checked>
+                                                <label for="third4">
                                                     <div class="third__choice-img"><img src="img/purchasePage3.png" alt=""></div>
                                                     <h3 class="third__choice-title">Острый халапенью</h3>
                                                     <p class="third__choice-price">от 120 ₽</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="purchase__page-third__choice-row">
-                                                <div class="purchase__page-third__choice-item">
-                                                    <div class="third__choice-img"><img src="img/purchasePage1.png" alt=""></div>
-                                                    <h3 class="third__choice-title">Острый халапенью</h3>
-                                                    <p class="third__choice-price">от 120 ₽</p>
-                                                </div>
-                                                <div class="purchase__page-third__choice-item">
+                                                </label>
+                                                <input type="radio" name="thirdChoice" value="5" id="third5">
+                                                <label for="third5">
                                                     <div class="third__choice-img"><img src="img/purchasePage2.png" alt=""></div>
                                                     <h3 class="third__choice-title">Острый халапенью</h3>
                                                     <p class="third__choice-price">от 120 ₽</p>
-                                                </div>
-                                                <div class="purchase__page-third__choice-item">
-                                                    <div class="third__choice-img"><img src="img/purchasePage3.png" alt=""></div>
+                                                </label>
+                                                <input type="radio" name="thirdChoice" value="6" id="third6">
+                                                <label for="third6">
+                                                    <div class="third__choice-img"><img src="img/purchasePage1.png" alt=""></div>
                                                     <h3 class="third__choice-title">Острый халапенью</h3>
                                                     <p class="third__choice-price">от 120 ₽</p>
-                                                </div>
-                                            </div>
+                                                </label>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                                 <a href="#" class="purchase__page-btn">Добавить в корзину 1 048 ₽</a>
                             </div>
                         </div>
-
                     </div>
                     <div class="menu__card">
                         <div class="menu__card__img"><img src="img/pasta.png" alt=""></div>
