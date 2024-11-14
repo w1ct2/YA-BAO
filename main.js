@@ -36,11 +36,7 @@ new Swiper ('.purchase__page-third__choice', {
 
 const burgerBtn = document.querySelector('.burger__btn');
 const burgerOptions = document.querySelector('.burger__options');
-const body = document.querySelector('body')
-const blackout = document.querySelector('.blackout')
 const burgerClose = document.querySelector('.burger__close')
-const menuCardBasket = document.querySelector('.menu__card__basket')
-const purchasePage = document.querySelector('.purchase__page')
 burgerBtn.addEventListener('click', () => {
     burgerBtn.classList.toggle('active')
     burgerOptions.classList.toggle('active')
@@ -54,16 +50,30 @@ burgerClose.addEventListener('click', () => {
     body.classList.remove('active')
 })
 
-menuCardBasket.addEventListener('click', () => {
-    body.classList.toggle('active')
-    blackout.classList.toggle('active')
-    purchasePage.classList.toggle('active')
-})
-
+const body = document.querySelector('body')
+const blackout = document.querySelector('.blackout')
 blackout.addEventListener('click', () => {
     burgerOptions.classList.remove('active')
     blackout.classList.remove('active')
     burgerBtn.classList.remove('active')
     body.classList.remove('active')
-    purchasePage.classList.remove('active')
+    for (i = 0; i < purchasePage.length; i++) {
+        purchasePage[i].classList.remove('active')
+    }
+})
+
+
+const menuCardBasket = document.querySelectorAll('.menu__card__basket')
+const purchasePage = document.querySelectorAll('.purchase__page')
+menuCardBasket.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        const btn = document.querySelector(`.btn-${index}`)
+        const page = document.querySelector(`.page-${index}`)
+        if (btn) {
+            console.log(`${index}`);
+            body.classList.toggle('active')
+            blackout.classList.toggle('active')
+            purchasePage[`${index}`].classList.toggle('active')
+        }
+    })
 })

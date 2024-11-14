@@ -642,6 +642,7 @@ input:focus, textarea:focus, select:focus {
     height: 35px;
     color: #ffffff;
     text-align: center;
+    display: block;
 }
 @media (max-width: 1000px) {
     .menu__card {
@@ -707,9 +708,6 @@ input:focus, textarea:focus, select:focus {
 /* -------------------------Purchase page------------------------- */
 .purchase__page {
     display: none;
-}
-.purchase__page.active {
-    display: flex;
     position: fixed;
     top: 100px;
     left: 50%;
@@ -721,6 +719,10 @@ input:focus, textarea:focus, select:focus {
     border-radius: 22px;
     z-index: 4;
     animation: testTwo .8s forwards;
+    gap: 20px;
+}
+.purchase__page.active {
+    display: flex;
 }
 @keyframes testTwo {
     0% {
@@ -731,8 +733,8 @@ input:focus, textarea:focus, select:focus {
     }
 }
 .purchase__page-img {
-    max-height: 500px;
-    max-width: 500px;
+    height: 500px;
+    width: 500px;
     display: flex;
     align-items: center;
     margin-left: 50px;
