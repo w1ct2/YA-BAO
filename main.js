@@ -33,6 +33,28 @@ new Swiper ('.purchase__page-third__choice', {
     direction: 'vertical',
     spaceBetween: 150,
 })
+new Swiper ('.basket__card__container', {
+    slidesPerView: 1.5,
+    slidesPerGroup: 1,
+    mousewheel: {
+        sensitivity: 1,
+    },
+    direction: 'vertical',
+    spaceBetween: 20,
+})
+// new Swiper ('.basket__bottom', {
+//     slidesPerView: 1,
+//     slidesPerGroup: 1,
+//     mousewheel: {
+//         sensitivity: 1,
+//     },
+//     spaceBetween: 15,
+// })
+const basketPage = document.querySelector('.basket__page')
+const basketPageContainer = document.querySelector('.basket__page__container')
+basketPage.addEventListener('click', () => {
+    basketPageContainer.classList.toggle('active')
+})
 
 const burgerBtn = document.querySelector('.burger__btn');
 const burgerOptions = document.querySelector('.burger__options');
