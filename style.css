@@ -180,6 +180,8 @@ input:focus, textarea:focus, select:focus {
     height: 42px;
     width: 70px;
 }
+/* --------------------------------------------------------------- */
+/* ------------------------Basket--------------------------------- */
 .basket {
     width: 160px;
     height: 42px;

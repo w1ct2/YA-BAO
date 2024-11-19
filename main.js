@@ -42,6 +42,15 @@ new Swiper ('.basket__card__container', {
     direction: 'vertical',
     spaceBetween: 20,
 })
+new Swiper ('.basket-main__optional__swiper', {
+    slidesPerView: 3,
+    slidesPerGroup: 1,
+    // mousewheel: {
+    //     sensitivity: 1,
+    // },
+    freeMode: true,
+    spaceBetween: 20,
+})
 // new Swiper ('.basket__bottom', {
 //     slidesPerView: 1,
 //     slidesPerGroup: 1,
@@ -54,6 +63,25 @@ const basketPage = document.querySelector('.basket__page')
 const basketPageContainer = document.querySelector('.basket__page__container')
 basketPage.addEventListener('click', () => {
     basketPageContainer.classList.toggle('active')
+})
+const basketPlus = document.querySelector('#basket__plus')
+const basketValue = document.querySelector('#basket__value')
+const basketMinus = document.querySelector('#basket__minus')
+const basketPrice = document.querySelector('.basket__card__price')
+const initPrice = parseInt(basketPrice.textContent, 10);
+basketPlus.addEventListener('click', ()=>{
+    let bsktValue = parseInt(basketValue.textContent, 10)
+    let bsktPrice = parseInt(basketPrice.textContent, 10)
+    basketValue.textContent = bsktValue + 1;
+    basketPrice.textContent = initPrice + bsktPrice + " ₽";
+})
+basketMinus.addEventListener('click', ()=>{
+    let bsktValue = parseInt(basketValue.textContent, 10)
+    let bsktPrice = parseInt(basketPrice.textContent, 10)
+    if (bsktValue > 1) {
+        basketValue.textContent = bsktValue - 1;
+        basketPrice.textContent = bsktPrice - initPrice  + " ₽";
+    }
 })
 
 const burgerBtn = document.querySelector('.burger__btn');

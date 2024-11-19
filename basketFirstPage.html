@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YA BAO</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="basketFirstPage.css">
+    <!--     Fonts       -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/panton" rel="stylesheet">
+    <!--      Swiper     -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- -----------------Header Logo (Нaвигация логотип)-------------------------------------  -->
+                <nav class="nav__header" id="nav__header">
+                    <div class="logo__container">
+                        <a href="index.html" title="YA BAO" class="logo"><img src="img/logo.svg" alt=""></a> 
+                        <h1 class="logo__title"><a href="index.html" title="YA BAO">ya bao</a></h1>
+                        <p class="logo__p">дух китайской еды</p>
+                    </div>
+                    <div class="status__container">
+                        <div class="status__item">
+                            <div class="status__number active">1
+                                <div class="status__title active">Корзина</div>
+                            </div>
+                        </div>
+                        <span></span>
+                        <div class="status__item">
+                            <div class="status__number">2
+                                <div class="status__title">Оформление заказа</div>
+                            </div>
+                        </div>
+                        <span></span>
+                        <div class="status__item">
+                            <div class="status__number">3
+                                <div class="status__title">Заказ принят</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blackout"></div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="basket-main">
+            <!-- ------------------------------Basket (Корзина)--------------------------------------------  -->
+            <div class="container container-basket">
+                <h1 class="basket-main__title">Корзина</h1>
+                <div class="basket-main__catalog">
+                    <div class="basket-main__catalog-card">
+                        <div class="basket-main__catalog-card__img">
+                            <img src="img/drinks.png" alt="">
+                        </div>
+                        <h3 class="basket-main__catalog-card__title">С креветками и трюфелями</h3>
+                        <p class="basket-main__catalog-card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="basket-main__catalog-card__price">120 ₽</div>
+                        <div class="basket__card__range basket-main__catalog-card__range">
+                            <div class="basket__card__range__item basket-main__catalog-card__range__item" id="basket__minus">-</div>
+                            <div class="basket__card__range__item basket-main__catalog-card__range__item" id="basket__value">1</div>
+                            <div class="basket__card__range__item basket-main__catalog-card__range__item" id="basket__plus">+</div>
+                        </div>
+                        <div class="basket__card__delete basket-main__catalog-card__delete">
+                            <img src="img/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="basket-main__catalog-card">
+                        <div class="basket-main__catalog-card__img">
+                            <img src="img/soup2.png" alt="">
+                        </div>
+                        <h3 class="basket-main__catalog-card__title">С креветками и трюфелями</h3>
+                        <p class="basket-main__catalog-card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="basket-main__catalog-card__price">120 ₽</div>
+                        <div class="basket__card__range basket-main__catalog-card__range">
+                            <div class="basket__card__range__item basket-main__catalog-card__range__item" id="basket__minus">-</div>
+                            <div class="basket__card__range__item basket-main__catalog-card__range__item" id="basket__value">1</div>
+                            <div class="basket__card__range__item basket-main__catalog-card__range__item" id="basket__plus">+</div>
+                        </div>
+                        <div class="basket__card__delete basket-main__catalog-card__delete">
+                            <img src="img/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="basket-main__catalog-card">
+                        <div class="basket-main__catalog-card__img">
+                            <img src="img/pasta2.png" alt="">
+                        </div>
+                        <h3 class="basket-main__catalog-card__title">С креветками и трюфелями</h3>
+                        <p class="basket-main__catalog-card__p">Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное масло, черный перец, пармезан.350 г</p>
+                        <div class="basket-main__catalog-card__price">120 ₽</div>
+                        <div class="basket__card__range basket-main__catalog-card__range">
+                            <div class="basket__card__range__item basket-main__catalog-card__range__item" id="basket__minus">-</div>
+                            <div class="basket__card__range__item basket-main__catalog-card__range__item" id="basket__value">1</div>
+                            <div class="basket__card__range__item basket-main__catalog-card__range__item" id="basket__plus">+</div>
+                        </div>
+                        <div class="basket__card__delete basket-main__catalog-card__delete">
+                            <img src="img/basket.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="basket-main__optional">
+                    <h2 class="basket-main__optional__title">Добавить к заказу?</h2>
+                    <div class="basket-main__optional__swiper swiper">
+                        <form class="swiper-wrapper optional__wrapper">
+                            <input type="checkbox" name="optional" id="optional-item-1" value="1">
+                            <label for="optional-item-1" class="swiper-slide basket-main__optional__item">
+                                <div class="optional__img"><img src="img/drinks.png" alt=""></div>
+                                <h3 class="optional__title">Молочный коктель с приятным аро...</h3>
+                                <p class="optional__price">от 120 ₽</p>
+                            </label>
+                            <input type="checkbox" name="optional" id="optional-item-2" value="2">
+                            <label for="optional-item-2" class="swiper-slide basket-main__optional__item">
+                                <div class="optional__img"><img src="img/pizza2.png" alt=""></div>
+                                <h3 class="optional__title">Молочный коктель с приятным аро...</h3>
+                                <p class="optional__price">от 120 ₽</p>
+                            </label>
+                            <input type="checkbox" name="optional" id="optional-item-3" value="3">
+                            <label for="optional-item-3" class="swiper-slide basket-main__optional__item">
+                                <div class="optional__img"><img src="img/pasta.png" alt=""></div>
+                                <h3 class="optional__title">Молочный коктель с приятным аро...</h3>
+                                <p class="optional__price">от 120 ₽</p>
+                            </label>
+                            <input type="checkbox" name="optional" id="optional-item-4" value="4">
+                            <label for="optional-item-4" class="swiper-slide basket-main__optional__item">
+                                <div class="optional__img"><img src="img/desserts.png" alt=""></div>
+                                <h3 class="optional__title">Молочный коктель с приятным аро...</h3>
+                                <p class="optional__price">от 120 ₽</p>
+                            </label>
+                            <input type="checkbox" name="optional" id="optional-item-5" value="5">
+                            <label for="optional-item-5" class="swiper-slide basket-main__optional__item">
+                                <div class="optional__img"><img src="img/groceries.png" alt=""></div>
+                                <h3 class="optional__title">Молочный коктель с приятным аро...</h3>
+                                <p class="optional__price">от 120 ₽</p>
+                            </label>
+                            <input type="checkbox" name="optional" id="optional-item-6" value="6">
+                            <label for="optional-item-6" class="swiper-slide basket-main__optional__item">
+                                <div class="optional__img"><img src="img/pasta2.png" alt=""></div>
+                                <h3 class="optional__title">Молочный коктель с приятным аро...</h3>
+                                <p class="optional__price">от 120 ₽</p>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+                <div class="basket-main__sauce">
+                    <h2 class="basket-main__sauce__title">Соусы к бортикам и закускам</h2>
+                    <form class="basket-main__sauce__container">
+                        <input type="checkbox" name="sauce" id="sauce-1" value="1">
+                        <label for="sauce-1">
+                            <div class="basket-main__sauce__img">
+                                <img src="img/cheese.png" alt="">
+                            </div>
+                            <h3 class="basket-main__sauce__title-two">Сырный соус</h3>
+                            <p class="basket-main__sauce__price">120 ₽</p>
+                        </label>
+                        <input type="checkbox" name="sauce" id="sauce-2" value="2">
+                        <label for="sauce-2">
+                            <div class="basket-main__sauce__img">
+                                <img src="img/sour-cream.png" alt="">
+                            </div>
+                            <h3 class="basket-main__sauce__title-two">Сгущёнка</h3>
+                            <p class="basket-main__sauce__price">120 ₽</p>
+                        </label>
+                        <input type="checkbox" name="sauce" id="sauce-3" value="3">
+                        <label for="sauce-3">
+                            <div class="basket-main__sauce__img">
+                                <img src="img/barbecue.png" alt="">
+                            </div>
+                            <h3 class="basket-main__sauce__title-two">Барбекю</h3>
+                            <p class="basket-main__sauce__price">120 ₽</p>
+                        </label>
+                        <input type="checkbox" name="sauce" id="sauce-4" value="4">
+                        <label for="sauce-4">
+                            <div class="basket-main__sauce__img">
+                                <img src="img/ranch.png" alt="">
+                            </div>
+                            <h3 class="basket-main__sauce__title-two">Ранч</h3>
+                            <p class="basket-main__sauce__price">120 ₽</p>
+                        </label>
+                        <input type="checkbox" name="sauce" id="sauce-5" value="5">
+                        <label for="sauce-5">
+                            <div class="basket-main__sauce__img">
+                                <img src="img/raspberry.png" alt="">
+                            </div>
+                            <h3 class="basket-main__sauce__title-two">Малиновое варенье</h3>
+                            <p class="basket-main__sauce__price">120 ₽</p>
+                        </label>
+                        <input type="checkbox" name="sauce" id="sauce-6" value="6">
+                        <label for="sauce-6">
+                            <div class="basket-main__sauce__img">
+                                <img src="img/cheese.png" alt="">
+                            </div>
+                            <h3 class="basket-main__sauce__title-two">Сырный соус</h3>
+                            <p class="basket-main__sauce__price">120 ₽</p>
+                        </label>
+                    </form>
+                </div>
+                <h2 class="basket-main__actions__title">Промокод</h2>
+                <div class="basket-main__actions__container">
+                    <form action="" class="basket-main__actions__form">
+                        <input type="text" placeholder="Введите промокод">
+                        <button type="submit">Применить</button>
+                    </form>
+                    <h2 class="basket-main__actions__price">Сумма заказа: <span>1 048 ₽</span></h2>
+                    <a href="index.html" class="basket-main__actions__link-back" title="Вернуться в магазин">Вернуться в магазин</a>
+                    <div class="basket-main__actions__link-forward">Оформить заказ</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" id="footer">
+        <div class="container">
+        <!-- --------------------------Footer-----------------------------------------------------  -->
+            <div class="footer__inner">
+                <div class="footer__left">
+                    <div class="logo__container left__logo">
+                        <a href="index.html" title="YA BAO" class="logo__footer">
+                            <img src="img/logo__footer.svg" alt="">
+                        </a> 
+                        <h1 class="logo__title"><a href="index.html" title="YA BAO">ya bao</a></h1>
+                        <p class="logo__p">дух китайской еды</p>
+                    </div>
+                    <a href="#" title="Перейти" class="left__title">Калорийность и состав</a>
+                    <a href="#" title="Перейти" class="left__title">Правовая информация</a>
+                    <a href="#" title="Перейти" class="left__title n">Мы в соцсетях:</a>
+                    <a href="#" title="Перейти" class="left__link">Youtube</a>
+                    <a href="#" title="Перейти" class="left__link">Facebook</a>
+                    <a href="#" title="Перейти" class="left__link">Instagram</a>
+                    <a href="#" title="Перейти" class="left__link">ВКонтакте</a>
+                </div>
+                <div class="footer__right">
+                    <div class="right__title">Остались вопросы? А мы всегда на связи:</div>
+                        <div class="right__icons__container">
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/viber.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/skype.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/messenger.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/telegram.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/facebook.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/vk.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__link">Написать нам</a>
+                        </div>
+                    <div class="right__phone">8 800 333-36-62</div>
+                    <div class="phone__btn right__phone__btn"><a href="#" title="Заказать звонок">Заказать звонок</a></div>
+                    <img src="img/noodles.png" alt="" class="noodles">
+                </div>
+                <div class="footer__bottom">
+                    <div class="bottom__rights">YaBao Все права защищены © 2021</div>
+                    <div class="payment__icons__container">
+                        <a class="payment__icons" href="#" title="Visa">
+                            <img src="img/visa.svg" alt="">
+                        </a>
+                        <a class="payment__icons" href="#" title="PayPal">
+                            <img src="img/paypal.svg" alt="">
+                        </a>
+                        <a class="payment__icons" href="#" title="Mir">
+                            <img src="img/mir.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
