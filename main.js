@@ -19,9 +19,9 @@ new Swiper('.prewiev__slider', {
 new Swiper('.options', {
     loop: true,
     slidesPerView: 5,
-    slidesPerGroup: 1,
+    slidesPerGroup: 2,
     mousewheel: {
-        sensitivity: 1,
+        sensitivity: 2,
     },
 });
 new Swiper ('.purchase__page-third__choice', {
@@ -45,24 +45,20 @@ new Swiper ('.basket__card__container', {
 new Swiper ('.basket-main__optional__swiper', {
     slidesPerView: 3,
     slidesPerGroup: 1,
-    // mousewheel: {
-    //     sensitivity: 1,
-    // },
     freeMode: true,
     spaceBetween: 20,
 })
-// new Swiper ('.basket__bottom', {
-//     slidesPerView: 1,
-//     slidesPerGroup: 1,
-//     mousewheel: {
-//         sensitivity: 1,
-//     },
-//     spaceBetween: 15,
-// })
+const enterBtn = document.querySelector('.enter__btn')
+const enterPage = document.querySelector('.enter__page__container')
+enterBtn.addEventListener('click', ()=> {
+    enterPage.classList.toggle('active')
+    basketPageContainer.classList.remove('active')
+})
 const basketPage = document.querySelector('.basket__page')
 const basketPageContainer = document.querySelector('.basket__page__container')
 basketPage.addEventListener('click', () => {
     basketPageContainer.classList.toggle('active')
+    enterPage.classList.remove('active')
 })
 const basketPlus = document.querySelector('#basket__plus')
 const basketValue = document.querySelector('#basket__value')

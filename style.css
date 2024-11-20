@@ -171,14 +171,82 @@ input:focus, textarea:focus, select:focus {
     display: flex;
     align-items: center;
     gap: 30px;
+    position: relative;
 }
-.enter {
+/* --------------------------------------------------------------- */
+/* ------------------------Enter=--------------------------------- */
+.enter__btn {
     color: rgba(105, 111, 122, 1);
     font-weight: 700;
     padding: 7px;
     line-height: 28px;
     height: 42px;
     width: 70px;
+    position: relative;
+    cursor: pointer;
+}
+.enter__page__container {
+    display: none;
+}
+.enter__page__container.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    right: 0px;
+    bottom: -170px;
+    width: 250px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 8px;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    z-index: 6;
+    padding: 20px;
+}
+.enter__page__container span {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    position: absolute;
+    right: 25px;
+    top: -10px;
+    transform: rotate(-45deg);
+    border-top: 1px solid rgb(0, 0, 0, 0.2);
+    border-right: 1px solid rgb(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 1);
+}
+.enter__page__container img{
+    position: absolute;
+    z-index: 7;
+    height: 120px;
+    right: -10px;
+    bottom: 15px;
+}
+.enter__reg {
+    width: 130px;
+    height: 40px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 46, 101, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 8;
+    font-size: 14px;
+    font-weight: 600;
+}
+.enter-page {
+    width: 160px;
+    height: 40px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 46, 101, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 8;
+    font-size: 14px;
+    font-weight: 600;
 }
 /* --------------------------------------------------------------- */
 /* ------------------------Basket--------------------------------- */
@@ -243,6 +311,7 @@ input:focus, textarea:focus, select:focus {
     transform: rotate(-45deg);
     border-top: 1px solid rgb(0, 0, 0, 0.2);
     border-right: 1px solid rgb(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 1);
 }
 .basket__card__container {
     height: 215px;
@@ -512,13 +581,19 @@ input:focus, textarea:focus, select:focus {
     align-items: center;
     justify-content: center;
 }
-.basket.burger {
+.basket__burger {
     background-color: rgba(255, 255, 255, 1);
     color: rgba(255, 46, 101, 1);
+    width: 160px;
+    height: 42px;
+    padding: 7px;
+    line-height: 28px;
+    border-radius: 8px;
+    text-align: center;
     font-weight: 600;
     margin-bottom: 20px;
 }
-.enter.burger {
+.enter__burger {
     background-color: rgba(255, 255, 255, 1);
     color: rgba(255, 46, 101, 1);
     width: 160px;
@@ -530,6 +605,18 @@ input:focus, textarea:focus, select:focus {
     font-weight: 600;
     margin-bottom: 20px;
     margin-top: 15px;
+}
+.enter__page__burger {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(255, 46, 101, 1);
+    width: 160px;
+    height: 42px;
+    padding: 7px;
+    line-height: 28px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 .phone__btn.burger {
     background-color: rgba(255, 255, 255, 1);
@@ -589,11 +676,8 @@ input:focus, textarea:focus, select:focus {
     .delivery__container {
         margin-right: 110px;
     }
-    .delivery__title {
-        font-size: 14px;
-    }
-    .delivery__p {
-        font-size: 12px;
+    .delivery__container {
+        display: none;
     }
 }
 @media (max-width: 700px) {
@@ -611,9 +695,6 @@ input:focus, textarea:focus, select:focus {
     .logo {
         height: 50px;
         width: 50px;
-    }
-    .delivery__container {
-        display: none;
     }
     .delivery__title {
         font-size: 12px;
