@@ -54,6 +54,9 @@ enterBtn.addEventListener('click', ()=> {
     enterPage.classList.toggle('active')
     basketPageContainer.classList.remove('active')
 })
+// enterPage.addEventListener('click', ()=>{
+//     enterPage.classList.add('active')
+// })
 const basketPage = document.querySelector('.basket__page')
 const basketPageContainer = document.querySelector('.basket__page__container')
 basketPage.addEventListener('click', () => {

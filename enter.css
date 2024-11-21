@@ -1,0 +1,276 @@
+.bonuses {
+    background-color: rgba(227, 236, 245, 1);
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+.bonuses__title {
+    padding-top: 40px;
+    margin-bottom: 30px;
+    color: rgba(255, 46, 101, 1);
+    font-weight: 700;
+    font-size: 34px;
+}
+.bonuses__catalog {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+.bonuses__item {
+    background-color: rgba(255, 255, 255, 1);
+    max-width: 255px;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 28px 0px rgba(0, 0, 0, 0.08);
+}
+.bonuses__img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+.bonuses__img img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.bonuses__text {
+    margin: 0 auto;
+    width: 180px;
+    text-align: center;
+    color: rgba(104, 100, 102, 1);
+    font-weight: 700;
+    font-size: 14px;
+}
+.bonuses__link {
+    display: inline-block;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 13px;
+    color: rgba(255, 46, 101, 1);
+    border-bottom: 2px solid rgba(255, 46, 101, 1);
+    border-bottom-style: dashed;
+}
+.enter-office {
+    margin-top: 60px;
+}
+.enter-office__title {
+    color: rgba(255, 46, 101, 1);
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+.enter-office__name {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    width: 350px;
+    row-gap: 10px;
+}
+.enter-office__name label {
+    color: rgba(35, 31, 32, 1);
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 10px;
+    grid-column: 1/3;
+    opacity: 70%;
+}
+.enter-office__name input {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: 2px solid rgba(227, 236, 245, 1);
+    border-right: none;
+    background-color: rgba(243, 243, 247, 1);
+    padding-left: 20px;
+    height: 50px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(35, 31, 32, 1);
+}
+.enter-office__name button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: rgba(243, 243, 247, 1);
+    color: rgba(255, 46, 101, 1);
+    border: 2px solid rgba(227, 236, 245, 1);
+    border-left: none;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.enter-office__phone {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.enter-office__phone label {
+    color: rgba(35, 31, 32, 1);
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 70%;
+}
+.enter-office__phone input {
+    border: 2px solid rgba(227, 236, 245, 1);
+    border-radius: 8px;
+    background-color: rgba(243, 243, 247, 1);
+    padding-left: 20px;
+    height: 50px;
+    width: 350px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(35, 31, 32, 1);
+}
+.enter-office__date {
+    display: grid;
+    grid-template-columns: repeat(3, 115px) 100px;
+    grid-template-rows: 28px 50px;
+    row-gap: 10px;
+}
+.enter-office__date label {
+    color: rgba(35, 31, 32, 1);
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 10px;
+    grid-column: 1/5;
+    opacity: 70%;
+}
+.enter-office__date input {
+    border: 2px solid rgba(227, 236, 245, 1);
+    background: none;
+    padding-left: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(35, 31, 32, 1);
+}
+#office__date-day {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-right: none;
+}
+#office__date-year {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-left: none;
+}
+.enter-office__date button {
+    text-align: right;
+    font-size: 15px;
+    font-weight: 700;
+    background: none;
+    color: rgba(157, 157, 155, 1);
+    opacity: 80%;
+}
+.enter-office__code {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    width: 350px;
+    row-gap: 10px;
+}
+.enter-office__code label:first-child{
+    color: rgba(35, 31, 32, 1);
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 70%;
+    grid-column: 1/3;
+}
+.enter-office__code label:last-child {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 70%;
+    margin-top: -10px;
+}
+.enter-office__code input {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: 2px solid rgba(227, 236, 245, 1);
+    border-right: none;
+    background-color: rgba(243, 243, 247, 1);
+    padding-left: 20px;
+    height: 50px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(35, 31, 32, 1);
+}
+.enter-office__code button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: rgba(243, 243, 247, 1);
+    color: rgba(255, 46, 101, 1);
+    border: 2px solid rgba(227, 236, 245, 1);
+    border-left: none;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.enter-office__subscribe {
+    margin-top: 30px;
+    display: grid;
+    row-gap: 15px;
+    column-gap: 15px;
+    grid-template-columns: 19px 1fr 26px;
+    align-items: center;
+    width: 450px;
+}
+.enter-office__subscribe h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255, 46, 101, 1);
+    grid-column: 1/4;
+}
+.enter-office__subscribe input[type=checkbox] {
+    appearance: none;
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 46, 101, 1);
+    height: 19px;
+    width: 19px;
+}
+.enter-office__subscribe input[type=checkbox]:checked::after {
+    position: absolute;
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(255, 46, 101, 1);
+    left: 4px;
+    top: 4px;
+}
+.enter-office__subscribe label {
+    color: rgba(35, 31, 32, 1);
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 70%;
+}
+.enter-office__subscribe a {
+    border-radius: 50%;
+    color: rgba(35, 31, 32, 1);
+    font-weight: 700;
+    font-size: 14px;
+    background-color: rgba(241, 242, 245, 1);
+    height: 26px;
+    width: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 80%;
+}
+.enter-office__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(227, 236, 245, 1);
+    font-weight: 700;
+    color: rgba(105, 111, 122, 1);
+    width: 140px;
+    height: 50px;
+    border-radius: 8px;
+    margin-top: 40px;
+}
