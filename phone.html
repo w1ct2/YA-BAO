@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YA BAO</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="phone.css">
+    <!--     Fonts       -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/panton" rel="stylesheet">
+    <!--      Swiper     -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- -----------------Header Logo (Нaвигация логотип)-------------------------------------  -->
+                <nav class="nav__header" id="nav__header">
+                    <div class="logo__container">
+                        <a href="#" title="YA BAO" class="logo"><img src="img/logo.svg" alt=""></a> 
+                        <h1 class="logo__title"><a href="#" title="YA BAO">ya bao</a></h1>
+                        <p class="logo__p">дух китайской еды</p>
+                    </div>
+                    <div class="enter__basket__container">
+                        <div class="enter__btn">Войти
+                            <div class="enter__page__container">
+                                <span></span>
+                                <img src="img/onion.png" alt="">
+                                <div class="enter__reg">Войти</div>
+                                <a href="enter.html" class="enter-page">Личный кабинет</a>
+                            </div>
+                        </div>
+                        <div class="basket">
+                            <a href="basket.html" title="Перейти" class="basket__link">Корзина</a>
+                            <span></span>
+                            <div class="basket__page">1</div>
+                            <div class="basket__page__container">
+                                <span></span>
+                                <div class="basket__card__container swiper">
+                                    <div class="swiper-wrapper basket__card__inner">
+                                        <div class="swiper-slide">
+                                            <div class="basket__card" id="basket__card-1">
+                                                <div class="basket__card__img"><img src="img/pizza1.png" alt=""></div>
+                                                <div class="basket__card__title">С креветками и трюфелями</div>
+                                                <div class="basket__card__delete">
+                                                    <img src="img/basket.svg" alt="">
+                                                </div>
+                                                <div class="basket__card__range">
+                                                    <div class="basket__card__range__item" id="basket__minus">-</div>
+                                                    <div class="basket__card__range__item" id="basket__value">1</div>
+                                                    <div class="basket__card__range__item" id="basket__plus">+</div>
+                                                </div>
+                                                <div class="basket__card__price">120 ₽</div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="basket__card" id="basket__card-2">
+                                                <div class="basket__card__img"><img src="img/pasta2.png" alt=""></div>
+                                                <div class="basket__card__title">С креветками и трюфелями</div>
+                                                <div class="basket__card__delete">
+                                                    <img src="img/basket.svg" alt="">
+                                                </div>
+                                                <div class="basket__card__range">
+                                                    <div class="basket__card__range__item" id="basket__minus">-</div>
+                                                    <div class="basket__card__range__item" id="basket__value">1</div>
+                                                    <div class="basket__card__range__item" id="basket__plus">+</div>
+                                                </div>
+                                                <div class="basket__card__price">120 ₽</div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="basket__card" id="basket__card-3">
+                                                <div class="basket__card__img"><img src="img/antipasts.png" alt=""></div>
+                                                <div class="basket__card__title">С креветками и трюфелями</div>
+                                                <div class="basket__card__delete">
+                                                    <img src="img/basket.svg" alt="">
+                                                </div>
+                                                <div class="basket__card__range">
+                                                    <div class="basket__card__range__item" id="basket__minus">-</div>
+                                                    <div class="basket__card__range__item" id="basket__value">1</div>
+                                                    <div class="basket__card__range__item" id="basket__plus">+</div>
+                                                </div>
+                                                <div class="basket__card__price">120 ₽</div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="basket__card" id="basket__card-4">
+                                                <div class="basket__card__img"><img src="img/soup.png" alt=""></div>
+                                                <div class="basket__card__title">С креветками и трюфелями</div>
+                                                <div class="basket__card__delete">
+                                                    <img src="img/basket.svg" alt="">
+                                                </div>
+                                                <div class="basket__card__range">
+                                                    <div class="basket__card__range__item" id="basket__minus">-</div>
+                                                    <div class="basket__card__range__item" id="basket__value">1</div>
+                                                    <div class="basket__card__range__item" id="basket__plus">+</div>
+                                                </div>
+                                                <div class="basket__card__price">120 ₽</div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="basket__card" id="basket__card-5">
+                                                <div class="basket__card__img"><img src="img/soup2.png" alt=""></div>
+                                                <div class="basket__card__title">С креветками и трюфелями</div>
+                                                <div class="basket__card__delete">
+                                                    <img src="img/basket.svg" alt="">
+                                                </div>
+                                                <div class="basket__card__range">
+                                                    <div class="basket__card__range__item" id="basket__minus">-</div>
+                                                    <div class="basket__card__range__item" id="basket__value">1</div>
+                                                    <div class="basket__card__range__item" id="basket__plus">+</div>
+                                                </div>
+                                                <div class="basket__card__price">120 ₽</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="basket__sum">
+                                    <div class="sum__text">Сумма заказа</div>
+                                    <div class="sum__price">120 ₽</div>
+                                    <a href="#" class="sum__link" title="Добавить к заказу?">Добавить к заказу?</a>
+                                </div>
+                                <div class="basket__bottom">
+                                    <div class="basket__bottom__item" id="basket__bottom__item-1">
+                                        <div class="basket__bottom__img"><img src="img/pizza2.png" alt=""></div>
+                                        <div class="basket__bottom__title">Молочный коктель с приятным аро...</div>
+                                        <div class="basket__bottom__price">от 120 ₽</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- -----------------------Burger menu-----------------------------------------  -->
+                    <div class="burger__btn">
+                        <span></span>
+                    </div>
+                    <div class="burger__options">
+                        <div class="burger__options__container">
+                            <div class="burger__close"></div>
+                            <span class="burger__span"></span>
+                            <a class="enter__burger" href="#" title="Войти">Войти</a>
+                            <a href="#" class="enter__page__burger" title="Войти">Личный кабинет</a>
+                            <a class="basket__burger" href="basket.html" title="Корзина">Корзина</a>
+                            <a class="phone__btn burger" href="#" title="Заказать звонок">Заказать звонок</a>
+                            <div class="phone select__on burger">8 800 333-36-62</div>
+                            <span class="burger__span"></span>
+                            <div class="burger__img">
+                                <img src="img/main_card2.png" alt="">
+                            </div>
+                            <span class="burger__span"></span>
+                            <div class="delivery__title burger">Доставка пасты <span>Москва</span></div>
+                            <div class="delivery__p burger">Время доставки от 31 мин</div>
+                            <span class="burger__span"></span>
+                        </div>
+                    </div>
+                    <div class="blackout"></div>
+                </nav>
+                <!-- -----------------------Header Options (Опции)------------------------------  -->
+                <nav class="nav__options">
+                    <div class="swiper options">
+                        <div class="swiper-wrapper options__container">
+                            <a class="swiper-slide options__item" id="options__item1" href="index.html #menu__one" title="Перейти">Паста</a>
+                            <a class="swiper-slide options__item" id="options__item2" href="index.html #menu__two" title="Перейти">Супы</a>
+                            <a class="swiper-slide options__item" id="options__item3" href="index.html #menu__three" title="Перейти">Салаты</a>
+                            <a class="swiper-slide options__item" id="options__item4" href="index.html #menu__four" title="Перейти">Антипасти</a>
+                            <a class="swiper-slide options__item" id="options__item5" href="index.html #menu__five" title="Перейти">Напитки</a>
+                            <a class="swiper-slide options__item" id="options__item6" href="index.html #menu__six" title="Перейти">Десерты</a>
+                            <a class="swiper-slide options__item" id="options__item7" href="index.html #menu__seven" title="Перейти">Бакалея</a>
+                            <a class="swiper-slide options__item" id="options__item8" href="index.html #stocks" title="Перейти">Акции</a>
+                            <a class="swiper-slide options__item" id="options__item9" href="index.html #menu__eight" title="Перейти">Пицца</a>
+                            <a class="swiper-slide options__item" id="options__item10" href="index.html #footer" title="Перейти">Контакты</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="payment__map__container phone__page">
+            <iframe class="payment__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80388.19267509317!2d9.729781581536383!3d50.97676878293283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a4aa35ad3b3069%3A0x822942ff510ea21d!2zMzYxNzkg0JHQtdCx0YDQsCwg0JPQtdGA0LzQsNC90LjRjw!5e0!3m2!1sru!2sru!4v1729848707349!5m2!1sru!2sru" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map"></iframe>
+        </div>
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+        <!-- --------------------------Footer-----------------------------------------------------  -->
+            <div class="footer__inner">
+                <div class="footer__left phone__page">
+                    <div class="footer__phone__page">
+                        <h2>8 800 333-36-62</h2>
+                        <h3>ул. Зорге, 70-72</h3>
+                        <p>Доставка и самовывоз 10:00 — 23:00</p>
+                    </div>
+                    <a href="#" title="Перейти" class="left__title one">Калорийность и состав</a>
+                    <a href="#" title="Перейти" class="left__title two">Правовая информация</a>
+                    <a href="#" title="Перейти" class="left__title three">Мы в соцсетях:</a>
+                    <a href="#" title="Перейти" class="left__link">Youtube</a>
+                    <a href="#" title="Перейти" class="left__link">Facebook</a>
+                    <a href="#" title="Перейти" class="left__link">Instagram</a>
+                    <a href="#" title="Перейти" class="left__link">ВКонтакте</a>
+                </div>
+                <div class="footer__right">
+                    <div class="right__title">Остались вопросы? А мы всегда на связи:</div>
+                        <div class="right__icons__container">
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/viber.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/skype.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/messenger.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/telegram.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/facebook.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/vk.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__link">Написать нам</a>
+                        </div>
+                    <img src="img/noodles.png" alt="" class="noodles">
+                </div>
+                <div class="footer__bottom">
+                    <div class="bottom__rights">YaBao Все права защищены © 2021</div>
+                    <div class="payment__icons__container">
+                        <a class="payment__icons" href="#" title="Visa">
+                            <img src="img/visa.svg" alt="">
+                        </a>
+                        <a class="payment__icons" href="#" title="PayPal">
+                            <img src="img/paypal.svg" alt="">
+                        </a>
+                        <a class="payment__icons" href="#" title="Mir">
+                            <img src="img/mir.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

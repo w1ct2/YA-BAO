@@ -1,0 +1,81 @@
+.payment__map__container.phone__page {
+    margin: 100px auto;
+}
+.footer__phone__page {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/4;
+}
+.phone__page h2 {
+    color: rgba(255, 46, 101, 1);
+    font-weight: 700;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+.phone__page h3 {
+    color: rgba(14, 12, 13, 1);
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.phone__page p {
+    color: rgba(14, 12, 13, 1);
+    font-weight: 600;
+    font-size: 15px;
+}
+.footer__left {
+    grid-template-columns: repeat(2, 1fr) 2fr;
+    column-gap: 10px;
+    row-gap: 40px;
+}
+.left__title.three {
+    grid-column: 1/4;
+}
+.left__title.one {
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+.left__title.two {
+    grid-row: 3/4;
+    grid-column: 3/4;
+}
+.footer__right {
+    grid-column: 2/3;
+    margin-bottom: auto;
+}
+.noodles {
+    position: absolute;
+    z-index: -1;
+    bottom: -200px;
+    right: -20px;
+}
+@media (max-width: 1000px) {
+    .footer__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .noodles {
+        display: none;
+    }
+}
+@media (max-width: 480px) {
+    .phone__page h2 {
+        font-size: 28px;
+    }
+    .phone__page h3 {
+        font-size: 20px;
+    }
+    .phone__page p {
+        font-size: 12px;
+    }
+    .left__title {
+        font-size: 14px;
+    }
+    .left__link {
+        font-size: 14px;
+    }
+    .right__title {
+        font-size: 12px;
+    }
+}
