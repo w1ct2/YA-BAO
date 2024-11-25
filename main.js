@@ -34,13 +34,20 @@ new Swiper ('.purchase__page-third__choice', {
     spaceBetween: 150,
 })
 new Swiper ('.basket__card__container', {
-    slidesPerView: 1.5,
+    slidesPerView: 2,
     slidesPerGroup: 1,
     mousewheel: {
         sensitivity: 1,
     },
     direction: 'vertical',
-    spaceBetween: 20,
+    spaceBetween: 15,
+})
+new Swiper ('.basket__bottom', {
+    slidesPerView: 1.2,
+    mousewheel: {
+        sensitivity: 1,
+    },
+    spaceBetween: 15,
 })
 new Swiper ('.basket-main__optional__swiper', {
     slidesPerView: 3,

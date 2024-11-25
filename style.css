@@ -177,7 +177,7 @@ input:focus, textarea:focus, select:focus {
     position: relative;
 }
 /* --------------------------------------------------------------- */
-/* ------------------------Enter=--------------------------------- */
+/* ------------------------Enter---------------------------------- */
 .enter__btn {
     color: rgba(105, 111, 122, 1);
     font-weight: 700;
@@ -326,22 +326,28 @@ input:focus, textarea:focus, select:focus {
     margin-top: 25px;
 }
 .basket__card {
-    display: grid;
-    grid-template-columns: 70px 150px 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    height: 100px;
-    width: 300px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+    display: grid !important;
+    grid-template-columns: 70px 150px 1fr !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    height: 100px !important;
+    width: 300px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2) !important;
+    box-sizing: border-box;
 }
 .basket__card__img {
     width: 70px;
     height: 70px;
     grid-row: 1/3;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .basket__card__img img { 
     width: 100%;
     height: auto;
+    margin: auto;
 }
 .basket__card__title {
     color: rgba(14, 12, 13, 1);
@@ -422,17 +428,23 @@ input:focus, textarea:focus, select:focus {
     width: 325px;
     height: 100px;
 }
+.basket__bottom__item-input{
+    display: none;
+}
+.basket__bottom__item-input:checked + .basket__bottom__item {
+    border: 1.5px solid rgba(255, 46, 101, 1)!important;
+}
 .basket__bottom__item {
-    display: grid;
-    grid-template-columns: 70px 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    column-gap: 15px;
-    width: 255px;
-    height: 100px;
-    border-radius: 12px;
-    border: 1.5px solid rgba(226, 226, 233, 1);
-    text-align: left;
-    padding: 14px 17px;
+    display: grid !important;
+    grid-template-columns: 70px 1fr !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    column-gap: 15px !important;
+    /* width: 155px !important;
+    height: 100px !important; */
+    border-radius: 12px !important;
+    border: 1.5px solid rgba(226, 226, 233, 1) !important;
+    text-align: left !important;
+    padding: 14px 17px !important;
 }
 .basket__bottom__img {
     height: 70px;
