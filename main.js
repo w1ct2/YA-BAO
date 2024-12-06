@@ -57,13 +57,11 @@ new Swiper ('.basket-main__optional__swiper', {
 })
 const enterBtn = document.querySelector('.enter__btn')
 const enterPage = document.querySelector('.enter__page__container')
+// console.log(document.querySelector('.enter__btn'))
 enterBtn.addEventListener('click', ()=> {
     enterPage.classList.toggle('active')
     basketPageContainer.classList.remove('active')
 })
-// enterPage.addEventListener('click', ()=>{
-//     enterPage.classList.add('active')
-// })
 const basketPage = document.querySelector('.basket__page')
 const basketPageContainer = document.querySelector('.basket__page__container')
 basketPage.addEventListener('click', () => {

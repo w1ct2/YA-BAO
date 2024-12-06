@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YA BAO</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="delivery.css">
+    <link rel="stylesheet" href="basket.css">
+    <link rel="stylesheet" href="enter.html">
+    <!--     Fonts       -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/panton" rel="stylesheet">
+    <!--      Swiper     -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- -----------------Header Logo (Нaвигация логотип)-------------------------------------  -->
+                <nav class="nav__header" id="nav__header">
+                    <div class="logo__container">
+                        <a href="index.html" title="YA BAO" class="logo"><img src="img/logo.svg" alt=""></a> 
+                        <h1 class="logo__title"><a href="index.html" title="YA BAO">ya bao</a></h1>
+                        <p class="logo__p">дух китайской еды</p>
+                    </div>
+                    <div class="status__container">
+                        <div class="status__item">
+                            <div class="status__number">1
+                                <div class="status__title">Корзина</div>
+                            </div>
+                        </div>
+                        <span></span>
+                        <div class="status__item">
+                            <div class="status__number active">2
+                                <div class="status__title active">Оформление заказа</div>
+                            </div>
+                        </div>
+                        <span></span>
+                        <div class="status__item">
+                            <div class="status__number">3
+                                <div class="status__title">Заказ принят</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blackout"></div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="delivery-main__form">
+            <div class="container">
+                <h1 class="delivery-main__title">Заказ на доставку</h1>
+                <div class="delivery-main__form-container">
+                    <div class="delivery-main__form-blank">
+                        <form class="blank__name">
+                            <label for="blank__name" class="delivery-main__label">Имя</label>
+                            <input type="text" id="blank__name">
+                        </form>
+                        <form class="blank__phone">
+                            <label for="blank__phone" class="delivery-main__label">Номер телефона</label>
+                            <input type="text" id="blank__phone">
+                            <button>Изменить</button>
+                        </form>
+                        <form class="blank__address">
+                            <label for="blank__address" class="delivery-main__label">Адрес доставки</label>
+                            <div class="blank__address__container">
+                                <h4>Дом</h4>
+                                <button id="blank__address__btn-1">Изменить</button>
+                                <input type="text" id="blank__address">
+                                <button id="blank__address__btn-2">Выбрать самовывоз</button>
+                            </div>
+                        </form>
+                        <form class="blank__time">
+                            <label for="blank__time" class="delivery-main__label">Время доставки</label>
+                            <input type="text" id="blank__time">
+                            <button>Изменить</button>
+                        </form>
+                    </div>
+                    <div class="delivery-main__form-composition">
+                        <h3 class="form-composition__title">Состов заказа</h3>
+                        <div class="form-composition-catalog">
+                            <div class="form-composition-catalog-item">
+                                <h4>Кломбо за 599 ₽</h4>
+                                <p>Средняя 30 см, традиционное тесто</p>
+                                <div>599₽</div>
+                            </div>
+                            <div class="form-composition-catalog-item">
+                                <h4>Кломбо за 599 ₽</h4>
+                                <p>Средняя 30 см, традиционное тесто</p>
+                                <div>599₽</div>
+                            </div>
+                        </div>
+                        <div class="form-composition__price">Сумма заказа<span>1 048 ₽</span></div>
+                        <article>Бесплатная доставка</article>
+                    </div>
+                    <form class="delivery-main__form-promocode">
+                        <h2>Промокод</h2>
+                        <input type="text" placeholder="Введите промокод">
+                        <button>Применить</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="delivery-main__payment">
+            <div class="container">
+                <div class="delivery-main__payment__inner">
+                    <div class="payment__method">
+                        <h1 class="payment__method-title">Способы оплаты</h1>
+                        <form class="payment__method-form">
+                            <div class="payment__method-form__input">
+                                <input type="radio" name="payment__method-form" id="payment__method-form__card-1" checked>
+                                <img src="img/payment-card.svg" alt="">
+                                <label for="payment__method-form__card-1">Картой на сайте</label>
+                            </div>
+                            <div class="payment__method-form__card">
+                                <input type="text" placeholder="Номер карты" id="number-card">
+                                <input type="text" placeholder="Дата" id="date-card">
+                                <input type="text" placeholder="CVC" id="cvc-card">
+                                <article>Платеж безопасен. Мы не храним данные карт, все операции проводит sberbank - платежная система сертифицированная по международному стандарту безопасности PSI DSS.</article>
+                            </div>
+                            <div class="payment__method-form__input">
+                                <input type="radio" name="payment__method-form" id="payment__method-form__card-2">
+                                <label for="payment__method-form__card-2">Наличными</label>
+                            </div>
+                            <div class="payment__method-form__cash" style="display: none;">
+                                <label for="form__cash-sum">С какой суммы подготовить сдачу?</label>
+                                <input type="text" id="form__cash-sum">
+                                <div>₽</div>
+                                <input type="checkbox" name="" id="form__cash-text">
+                                <label for="form__cash-text">Без сдачи</label>
+                            </div>
+                        </form>
+                    </div>
+                    <form class="payment__method-checkbox">
+                        <input type="checkbox" id="payment__method-checkbox">
+                        <label for="payment__method-checkbox">Сообщать о бонусах, акциях и новых продуктах</label>
+                        <a href="#">i</a>
+                    </form>
+                    <div class="payment__method-links">
+                        <a href="basket.html" class="basket-main__actions__link-back" title="Вернуться в магазин">Назад в корзину</a>
+                        <a class="payment__method-link-forward" href="#">Оформить заказ на&nbsp;<span>1 048 ₽</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" id="footer">
+        <div class="container">
+        <!-- --------------------------Footer-----------------------------------------------------  -->
+            <div class="footer__inner">
+                <div class="footer__left">
+                    <div class="logo__container left__logo">
+                        <a href="index.html" title="YA BAO" class="logo__footer">
+                            <img src="img/logo__footer.svg" alt="">
+                        </a> 
+                        <h1 class="logo__title"><a href="index.html" title="YA BAO">ya bao</a></h1>
+                        <p class="logo__p">дух китайской еды</p>
+                    </div>
+                    <a href="#" title="Перейти" class="left__title">Калорийность и состав</a>
+                    <a href="#" title="Перейти" class="left__title">Правовая информация</a>
+                    <a href="#" title="Перейти" class="left__title n">Мы в соцсетях:</a>
+                    <a href="#" title="Перейти" class="left__link">Youtube</a>
+                    <a href="#" title="Перейти" class="left__link">Facebook</a>
+                    <a href="#" title="Перейти" class="left__link">Instagram</a>
+                    <a href="#" title="Перейти" class="left__link">ВКонтакте</a>
+                </div>
+                <div class="footer__right">
+                    <div class="right__title">Остались вопросы? А мы всегда на связи:</div>
+                        <div class="right__icons__container">
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/viber.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/skype.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/messenger.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/telegram.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/facebook.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__icons">
+                                <img src="img/vk.jpg" alt="">
+                            </a>
+                            <a href="#" title="Перейти" class="right__link">Написать нам</a>
+                        </div>
+                    <div class="right__phone">8 800 333-36-62</div>
+                    <div class="phone__btn right__phone__btn"><a href="#" title="Заказать звонок">Заказать звонок</a></div>
+                    <img src="img/noodles.png" alt="" class="noodles">
+                </div>
+                <div class="footer__bottom">
+                    <div class="bottom__rights">YaBao Все права защищены © 2021</div>
+                    <div class="payment__icons__container">
+                        <a class="payment__icons" href="#" title="Visa">
+                            <img src="img/visa.svg" alt="">
+                        </a>
+                        <a class="payment__icons" href="#" title="PayPal">
+                            <img src="img/paypal.svg" alt="">
+                        </a>
+                        <a class="payment__icons" href="#" title="Mir">
+                            <img src="img/mir.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="delivery.js"></script>
+</body>
+</html>
