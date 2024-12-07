@@ -49,30 +49,107 @@ new Swiper ('.basket__bottom', {
     },
     spaceBetween: 15,
 })
-new Swiper ('.basket-main__optional__swiper', {
-    slidesPerView: 3,
-    slidesPerGroup: 1,
-    freeMode: true,
-    spaceBetween: 20,
-})
+// new Swiper ('.basket-main__optional__swiper', {
+//     slidesPerView: 3,
+//     slidesPerGroup: 1,
+//     freeMode: true,
+//     spaceBetween: 20,
+// })
+const body = document.querySelector('body')
+const blackout = document.querySelector('.blackout')
 const enterBtn = document.querySelector('.enter__btn')
 const enterPage = document.querySelector('.enter__page__container')
-// console.log(document.querySelector('.enter__btn'))
-enterBtn.addEventListener('click', ()=> {
-    enterPage.classList.toggle('active')
-    basketPageContainer.classList.remove('active')
-})
+const enterRegPage = document.querySelector('.enter-reg__page')
+const enterRegLink = document.querySelector('.enter-reg__link')
+const enterRegPagePhone = document.querySelector('.enter-reg__page-phone')
+const enterRegPagePhoneInput = document.getElementById('enter-reg__page-input')
+const enterRegPageBtn = document.querySelector('.enter-reg__page-button')
 const basketPage = document.querySelector('.basket__page')
 const basketPageContainer = document.querySelector('.basket__page__container')
-basketPage.addEventListener('click', () => {
-    basketPageContainer.classList.toggle('active')
-    enterPage.classList.remove('active')
-})
 const basketPlus = document.querySelector('#basket__plus')
 const basketValue = document.querySelector('#basket__value')
 const basketMinus = document.querySelector('#basket__minus')
 const basketPrice = document.querySelector('.basket__card__price')
 const initPrice = parseInt(basketPrice.textContent, 10);
+const burgerBtn = document.querySelector('.burger__btn');
+const burgerOptions = document.querySelector('.burger__options');
+const burgerClose = document.querySelector('.burger__close')
+const menuCardBasket = document.querySelectorAll('.menu__card__basket')
+const purchasePage = document.querySelectorAll('.purchase__page')
+
+blackout.addEventListener('click', () => {
+    burgerOptions.classList.remove('active')
+    blackout.classList.remove('active')
+    burgerBtn.classList.remove('active')
+    body.classList.remove('active')
+    for (i = 0; i < purchasePage.length; i++) {
+        purchasePage[i].classList.remove('active')
+    }
+    enterRegPage.classList.remove('active')
+})
+enterBtn.addEventListener('click', ()=> {
+    enterPage.classList.toggle('active')
+    basketPageContainer.classList.remove('active')
+})
+enterRegPage.addEventListener('click', (e)=>{
+    e.stopPropagation()
+})
+enterRegLink.addEventListener('click', ()=>{
+    enterRegPage.classList.add('active')
+    blackout.classList.toggle('active')
+    body.classList.toggle('active')
+})
+
+// const enterRegPagePhoneInputValue = document.getElementById('enter-reg__page-input').value
+// const rePhone = /^[\d\+][\d\(\)\ -]{4,14}\d$/
+// const validPhone = rePhone.test(enterRegPagePhoneInputValue)
+
+enterRegPageBtn.addEventListener('click', ()=>{
+    const enterRegPageCode = document.createElement('form')
+    enterRegPageCode.className = 'enter-reg__page-code'
+    enterRegPage.appendChild(enterRegPageCode)
+    if (enterRegPageBtn) {
+        enterRegPageBtn.replaceWith(enterRegPageCode)
+    }
+
+    const enterRegPageCodeLabel = document.createElement('label')
+    enterRegPageCodeLabel.textContent = 'Код из СМС'
+    enterRegPageCode.appendChild(enterRegPageCodeLabel)
+
+    const enterRegPageCodeInput = document.createElement('input')
+    enterRegPageCode.appendChild(enterRegPageCodeInput)
+
+    const enterRegPageCodeBtn = document.createElement('button')
+    enterRegPageCodeBtn.textContent = 'Получить новый код'
+    enterRegPageCode.appendChild(enterRegPageCodeBtn)
+
+    const enterRegPagePhoneConfirmedInput = document.createElement('div')
+    const enterRegPagePhoneConfirmedInputValue = enterRegPagePhoneInput.value 
+    enterRegPagePhoneConfirmedInput.textContent = enterRegPagePhoneConfirmedInputValue
+    if (enterRegPagePhoneInput) {
+        enterRegPagePhoneInput.replaceWith(enterRegPagePhoneConfirmedInput)
+    }
+
+    const enterRegPagePhoneConfirmedBtn = document.createElement('button')
+    enterRegPagePhoneConfirmedBtn.textContent = 'Изменить'
+    enterRegPagePhone.appendChild(enterRegPagePhoneConfirmedBtn)
+    enterRegPagePhoneConfirmedBtn.addEventListener('click', (e)=>{
+        e.preventDefault()
+        if (enterRegPageCode) {
+            enterRegPageCode.replaceWith(enterRegPageBtn)
+        }
+        if (enterRegPagePhoneConfirmedInput) {
+            enterRegPagePhoneConfirmedInput.replaceWith(enterRegPagePhoneInput)
+        }
+        if (enterRegPagePhoneConfirmedBtn) {
+            enterRegPagePhoneConfirmedBtn.remove()
+        }
+    })
+})
+basketPage.addEventListener('click', () => {
+    basketPageContainer.classList.toggle('active')
+    enterPage.classList.remove('active')
+})
 basketPlus.addEventListener('click', ()=>{
     let bsktValue = parseInt(basketValue.textContent, 10)
     let bsktPrice = parseInt(basketPrice.textContent, 10)
@@ -87,10 +164,6 @@ basketMinus.addEventListener('click', ()=>{
         basketPrice.textContent = bsktPrice - initPrice  + " ₽";
     }
 })
-
-const burgerBtn = document.querySelector('.burger__btn');
-const burgerOptions = document.querySelector('.burger__options');
-const burgerClose = document.querySelector('.burger__close')
 burgerBtn.addEventListener('click', () => {
     burgerBtn.classList.toggle('active')
     burgerOptions.classList.toggle('active')
@@ -103,22 +176,6 @@ burgerClose.addEventListener('click', () => {
     burgerBtn.classList.remove('active')
     body.classList.remove('active')
 })
-
-const body = document.querySelector('body')
-const blackout = document.querySelector('.blackout')
-blackout.addEventListener('click', () => {
-    burgerOptions.classList.remove('active')
-    blackout.classList.remove('active')
-    burgerBtn.classList.remove('active')
-    body.classList.remove('active')
-    for (i = 0; i < purchasePage.length; i++) {
-        purchasePage[i].classList.remove('active')
-    }
-})
-
-
-const menuCardBasket = document.querySelectorAll('.menu__card__basket')
-const purchasePage = document.querySelectorAll('.purchase__page')
 menuCardBasket.forEach((btn, index) => {
     btn.addEventListener('click', () => {
         const btn = document.querySelector(`.btn-${index}`)
