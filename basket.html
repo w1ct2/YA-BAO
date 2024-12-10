@@ -210,7 +210,67 @@
                     </form>
                     <h2 class="basket-main__actions__price">Сумма заказа: <span>1 048 ₽</span></h2>
                     <a href="index.html" class="basket-main__actions__link-back" title="Вернуться в магазин">Вернуться в магазин</a>
-                    <a class="basket-main__actions__link-forward" href="delivery.html">Оформить заказ</a>
+                    <div class="basket-main__actions__link-forward">Оформить заказ</div>
+                    <div class="where-to-deliver">
+                        <h2 class="where-to-deliver__title">Куда доставить?</h2>
+                        <form class="where-to-deliver__form-radio">
+                            <input type="radio" id="where-to-deliver__form-radio-1" name="where-to-deliver__form-radio" value="1" checked>
+                            <label for="where-to-deliver__form-radio-1">Доставка</label>
+                            <input type="radio" id="where-to-deliver__form-radio-2" name="where-to-deliver__form-radio" value="2">
+                            <label for="where-to-deliver__form-radio-2">Самовывоз</label>
+                        </form>
+                        <form class="where-to-deliver__form-main">
+                            <input type="text" id="where-to-deliver__form-main-1">
+                            <input type="text" placeholder="Дом">
+                            <input type="text" placeholder="Дом">
+                            <div class="where-to-deliver__form-main__item">
+                                <input type="text" placeholder="Дом">
+                                <label for="">Последний</label>
+                            </div>
+                            <div class="where-to-deliver__form-main__item">
+                                <input type="text" placeholder="Дом">
+                                <label for="">Последний</label>
+                            </div>
+                            <div class="where-to-deliver__form-main__item">
+                                <input type="text" placeholder="Дом">
+                                <label for="">Последний</label>
+                            </div>
+                        </form>
+                        <form class="where-to-deliver__form-name">
+                            <input type="text" id="where-to-deliver__form-name" placeholder="Название адреса">
+                            <label for="where-to-deliver__form-name">Например, <span>Дом</span> или <span>Работа</span></label>
+                        </form>
+                        <form action="" class="where-to-deliver__form-comment">
+                            <input type="text" placeholder="Комментарий к адресу">
+                        </form>
+                        <button class="where-to-deliver__btn">Подтвердить адрес</button>
+                    </div>
+                    <div class="delivery-time">
+                        <h2 class="delivery-time__title">Время доставки</h2>
+                        <form class="delivery-time__inner" action="delivery.html" method="get">
+                            <input type="radio" name="delivery-time__radio" id="delivery-time__radio-1" checked>
+                            <label for="delivery-time__radio-1">Побыстрее</label>
+                            <input type="radio" name="delivery-time__radio" id="delivery-time__radio-2">
+                            <label for="delivery-time__radio-2">15:00 - 15:30</label>
+                            <input type="radio" name="delivery-time__radio" id="delivery-time__radio-3">
+                            <label for="delivery-time__radio-3">15:00 - 15:30</label>
+                            <input type="radio" name="delivery-time__radio" id="delivery-time__radio-4">
+                            <label for="delivery-time__radio-4">15:00 - 15:30</label>
+                            <input type="radio" name="delivery-time__radio" id="delivery-time__radio-5">
+                            <label for="delivery-time__radio-5">15:00 - 15:30</label>
+                            <input type="radio" name="delivery-time__radio" id="delivery-time__radio-6">
+                            <label for="delivery-time__radio-6">15:00 - 15:30</label>
+                            <input type="radio" name="delivery-time__radio" id="delivery-time__radio-7">
+                            <label for="delivery-time__radio-7">15:00 - 15:30</label>
+                            <input type="radio" name="delivery-time__radio" id="delivery-time__radio-8">
+                            <label for="delivery-time__radio-8">15:00 - 15:30</label>
+                            <input type="radio" name="delivery-time__radio" id="delivery-time__radio-9">
+                            <label for="delivery-time__radio-9">15:00 - 15:30</label>
+                            <input type="radio" name="delivery-time__radio" id="delivery-time__radio-10">
+                            <label for="delivery-time__radio-10">15:00 - 15:30</label>
+                        </form>
+                    </div>
+                    <div class="blackout"></div>
                 </div>
             </div>
         </section>
