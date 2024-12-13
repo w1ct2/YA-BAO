@@ -818,7 +818,8 @@ input:focus, textarea:focus, select:focus {
 }
 .burger__img {
     border-radius: 13px;
-    width: 360px;
+    max-width: 360px;
+    width: 100%;
 }
 .burger__img  img{
     width: 100%;
@@ -883,6 +884,18 @@ input:focus, textarea:focus, select:focus {
     }
     .nav__options {
         margin-top: 15px;
+    }
+}
+@media (max-width: 480px) {
+    .burger__options.active {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+@media (max-width: 360px) {
+    .burger__img {
+        max-width: 330px;
+        width: 100%;
     }
 }
 /* --------------------------------------------------------------- */
