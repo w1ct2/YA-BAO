@@ -18,7 +18,7 @@
 }
 .delivery-main__form-container {
     display: grid;
-    grid-template-columns: 1fr 340px;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 90px;
     gap: 40px;
 }
@@ -168,7 +168,8 @@
     grid-column: 2/3;
     padding: 22px;
     box-shadow: 0px 4px 28px 0px rgba(0, 0, 0, 0.08);
-    width: 340px;
+    max-width: 340px;
+    width: 100%;
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -238,7 +239,7 @@
     grid-template-columns: 1fr 130px;
     grid-template-rows: 17px 43px;
     row-gap: 30px;
-    width: 360px;
+    max-width: 360px;
 }
 .delivery-main__form-promocode h2 {
     grid-column: 1/3;
@@ -282,7 +283,7 @@
 }
 .payment__method {
     min-height: 322px;
-    width: 730px;
+    max-width: 730px;
     background-color: rgba(241, 242, 245, 1);
     border-radius: 6px;
     padding: 40px 30px;
@@ -297,6 +298,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    height: 100%;
 }
 .payment__method-form__input {
     display: flex;
@@ -493,11 +495,232 @@
     border-radius: 8px;
     height: 60px;
     width: 300px;
-    font-size: 15px;
     font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 800;
     font-size: 15px;
+}
+@media (max-width: 1200px) {
+    .delivery-main__title {
+        font-size: 26px;
+    }
+    .delivery-main__form-promocode h2 {
+        font-size: 20px;
+    }
+    #blank__address__btn-1,
+    #blank__address__btn-2,
+    .blank__phone button,
+    .blank__address button,
+    .blank__time button,
+    .blank__phone input,
+    .blank__address input,
+    .blank__time input {
+        font-size: 14px;
+    }
+    .delivery-main__label,
+    .blank__address__container h4 {
+        font-size: 15px;
+    }
+    .delivery-main__form-container {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 90px;
+        column-gap: 0;
+    }
+    .delivery-main__form-blank {
+        grid-row: 1/2;
+        max-width: 930px;
+        width: 100%;
+        margin: 0 auto;
+        grid-template-rows: 1fr 1fr 2fr 1fr;
+    }
+    .delivery-main__form-composition {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        max-width: 630px;
+        margin: 0 auto;
+    }
+    .delivery-main__form-promocode {
+        grid-row: 3/4;
+    }
+    .blank__name {
+        grid-template-columns: none;
+        grid-template-rows: 50px 50px;
+    }
+    .blank__name input {
+        margin: 0 20px;
+    }
+    .blank__phone {
+        grid-template-rows: 50px 50px;
+    }
+    .blank__phone label {
+        grid-column: 1/4;
+    }
+    .blank__phone input {
+        grid-column: 1/3;
+        margin-left: 20px;
+    }
+    .blank__phone button {
+        margin-right: 20px;
+    }
+    .blank__address {
+        grid-template-columns: 1fr;
+    }
+    .blank__address label {
+        align-items: center;
+    }
+    .blank__address__container {
+        margin: 0 20px;
+    }
+    .blank__time {
+        grid-template-columns: 1fr 100px;
+        grid-template-rows: 50px 50px;
+    }
+    .blank__time label {
+        grid-column: 1/3;
+    }
+    .blank__time input {
+        grid-column: 1/2;
+        margin-left: 20px;
+    }
+    .blank__time button {
+        grid-column: 2/3;
+        margin-right: 20px;
+    }
+    .delivery-main__form-promocode input::placeholder,
+    .delivery-main__form-promocode input,
+    .delivery-main__form-promocode button {
+        font-size: 12px;
+    }
+    .form-composition-catalog-item h4 {
+        font-size: 15px;    
+    }
+    .form-composition-catalog-item p {
+        font-size: 10px;    
+    }
+    .form-composition-catalog-item div {
+        font-size: 15px;
+    }
+}
+@media (max-width: 769px) {
+    .delivery-main__title {
+        font-size: 22px;
+    }
+    .delivery-main__label,
+    .blank__address__container h4 {
+        font-size: 13px;
+    }
+    #blank__address__btn-1,
+    #blank__address__btn-2,
+    .blank__phone button,
+    .blank__address button,
+    .blank__time button {
+        font-size: 12px;
+    }
+    .delivery-main__form-promocode h2 {
+        font-size: 18px;
+    }
+    .delivery-main__form-container {
+        gap: 0;
+    }
+    .nav__header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .status__container{
+        margin-right: 0 !important;
+    }
+    .payment__method-form__cash {
+        flex-wrap: wrap;
+        width: 290px;
+    }
+    .payment__method-form__card {
+        max-height: none;
+        max-width: 320px;
+        grid-template-columns: repeat(2, 1fr) 110px;
+        grid-template-rows: repeat(3, 45px);
+    }
+    .payment__method-form__card article {
+        grid-row: 3/4;
+        grid-column: 1/4;
+    }
+    .blank__address__container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .payment__method-checkbox {
+        grid-template-columns: 1fr 15fr 1fr;
+        width: auto;
+    }
+    .payment__method-checkbox label {
+        font-size: 12px;
+    }
+    .delivery-main__form-promocode input::placeholder,
+    .delivery-main__form-promocode input,
+    .delivery-main__form-promocode button {
+        font-size: 11px;
+    }
+    .payment__method-link-forward {
+        width: 250px;
+        font-size: 13px;
+    }
+    .basket-main__actions__link-back.delivery {
+        justify-content: center;
+    }
+    .form-composition-catalog-item h4 {
+        font-size: 13px;    
+    }
+    .form-composition-catalog-item p {
+        font-size: 9px;    
+    }
+    .form-composition-catalog-item div {
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    .blank__time {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50px 50px;
+    }
+    .delivery-main__label,
+    .blank__address__container h4 {
+        font-size: 11px;
+    }
+    #blank__address__btn-1,
+    #blank__address__btn-2,
+    .blank__phone button,
+    .blank__address button,
+    .blank__time button {
+        font-size: 11px;
+    }
+    .delivery-main__form-promocode {
+        grid-template-columns: 180px 70px;
+    }
+    .delivery-main__form-promocode h2 {
+        font-size: 16px;
+    }
+    .delivery-main__form-promocode input::placeholder,
+    .delivery-main__form-promocode input,
+    .delivery-main__form-promocode button {
+        font-size: 10px;
+    }
+    .payment__method-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .payment__method-link-forward {
+        width: 220px;
+        font-weight: 500;
+        height: 50px;
+    }
+    .form-composition-catalog-item h4 {
+        font-size: 12px;    
+    }
+    .form-composition-catalog-item p {
+        font-size: 8px;    
+    }
+    .form-composition-catalog-item div {
+        font-size: 13px;
+    }
 }
