@@ -533,13 +533,12 @@ input:focus, textarea:focus, select:focus {
 }
 .basket__card__range {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     width: 92px;
     height: 32px;
-    padding: 0 15px;
     margin-left: 17px;
     margin-top: auto;
 }
@@ -547,6 +546,8 @@ input:focus, textarea:focus, select:focus {
     color: rgba(104, 100, 102, 1);
     font-weight: 600;
     font-size: 18px;
+    width: 20px;
+    text-align: center;
 }
 .basket__card__range__item:last-child,
 .basket__card__range__item:first-child {

@@ -676,7 +676,14 @@
         width: 60px;
         padding: 0 7.5px;
     }
-    #basket__value {
+    .basket__card__range {
+        justify-content: space-between;
+        padding: 0 5px;
+    }
+    .basket__card__range__item {
+        width: 15px;
+    }
+    .basket__card__range__item:nth-child(2) {
         font-size: 14px;
     }
     .basket-main__optional__title,
@@ -856,6 +863,9 @@
         grid-column: 2/3;
         margin: 0;
         margin-left: auto;
+    }
+    .basket__card__range.basket-main__catalog-card__range {
+        width: 80px;
     }
     .basket__card__delete.basket-main__catalog-card__delete {
         grid-row: 3/4;

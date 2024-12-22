@@ -27,63 +27,41 @@ whereToDeliverBtn.addEventListener('click', ()=>{
     body.classList.add('active')
     deliveryTime.classList.add('active')
 })
-const deliveryTimeRadio1 = document.getElementById('delivery-time__radio-1')
-const deliveryTimeRadio2 = document.getElementById('delivery-time__radio-2')
-const deliveryTimeRadio3 = document.getElementById('delivery-time__radio-3')
-const deliveryTimeRadio4 = document.getElementById('delivery-time__radio-4')
-const deliveryTimeRadio5 = document.getElementById('delivery-time__radio-5')
-const deliveryTimeRadio6 = document.getElementById('delivery-time__radio-6')
-const deliveryTimeRadio7 = document.getElementById('delivery-time__radio-7')
-const deliveryTimeRadio8 = document.getElementById('delivery-time__radio-8')
-const deliveryTimeRadio9 = document.getElementById('delivery-time__radio-9')
-const deliveryTimeRadio10 = document.getElementById('delivery-time__radio-10')
-deliveryTimeRadio1.addEventListener('change', ()=>{
-    if (deliveryTimeRadio1.checked) {
-        window.location.href = 'delivery.html'
+
+deliveryTime.addEventListener('click', (event)=>{
+    const i = event.target
+    if (i.classList.contains("delivery-time__radio")) {
+        if (i.checked) {
+            window.location.href = 'delivery.html'
+        }
     }
 })
-deliveryTimeRadio2.addEventListener('change', ()=>{
-    if (deliveryTimeRadio2.checked) {
-        window.location.href = 'delivery.html'
-    }
-})
-deliveryTimeRadio3.addEventListener('change', ()=>{
-    if (deliveryTimeRadio3.checked) {
-        window.location.href = 'delivery.html'
-    }
-})
-deliveryTimeRadio4.addEventListener('change', ()=>{
-    if (deliveryTimeRadio4.checked) {
-        window.location.href = 'delivery.html'
-    }
-})
-deliveryTimeRadio5.addEventListener('change', ()=>{
-    if (deliveryTimeRadio5.checked) {
-        window.location.href = 'delivery.html'
-    }
-})
-deliveryTimeRadio6.addEventListener('change', ()=>{
-    if (deliveryTimeRadio6.checked) {
-        window.location.href = 'delivery.html'
-    }
-})
-deliveryTimeRadio7.addEventListener('change', ()=>{
-    if (deliveryTimeRadio7.checked) {
-        window.location.href = 'delivery.html'
-    }
-})
-deliveryTimeRadio8.addEventListener('change', ()=>{
-    if (deliveryTimeRadio8.checked) {
-        window.location.href = 'delivery.html'
-    }
-})
-deliveryTimeRadio9.addEventListener('change', ()=>{
-    if (deliveryTimeRadio9.checked) {
-        window.location.href = 'delivery.html'
-    }
-})
-deliveryTimeRadio10.addEventListener('change', ()=>{
-    if (deliveryTimeRadio10.checked) {
-        window.location.href = 'delivery.html'
+
+const basketMainCatalog = document.querySelector('.basket-main__catalog')
+basketMainCatalog.addEventListener('click', (event) => {
+    const i = event.target;
+    if (i.classList.contains('basket-main__catalog-card__range__item-minus') || i.classList.contains('basket-main__catalog-card__range__item-plus')) {
+        const card = i.closest('.basket-main__catalog-card') 
+        const price = card.querySelector('.basket-main__catalog-card__price')
+        // if (!price.dataset.initialPrice) {
+        //     price.dataset.initialPrice = price.textContent;
+        // }
+        const intPriceConst = parseInt(price.dataset.initialPrice);
+        let intPrice = parseInt(price.textContent)
+        if (!price.dataset.initialPrice) {
+            price.dataset.initialPrice = price.textContent;
+        }
+        const value = card.querySelector('.basket-main__catalog-card__range__item-value')
+        let intValue = parseInt(value.textContent)
+        if (i.classList.contains('basket-main__catalog-card__range__item-plus')) {
+            intValue += 1
+            
+            intPrice += intPriceConst
+        } else if (i.classList.contains('basket-main__catalog-card__range__item-minus') && intValue > 1) {
+            intValue -= 1
+            intPrice -= intPriceConst
+        }
+        value.textContent = `${intValue}`
+        price.textContent = `${intPrice} ₽`
     }
 })
