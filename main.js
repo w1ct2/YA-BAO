@@ -204,11 +204,19 @@ function sumPriceFun() {
 sumPriceFun()
 
 function basketQuantity() {
-    const quantity = document.querySelector('.basket__page')
-    const intQuantity = parseInt(quantity.textContent)
-    const bsktInner = document.querySelector('.basket__card-inner')
-    const bsktInnerChilds = bsktInner.childElementCount;
-    quantity.textContent = `${bsktInnerChilds}`;
+    const quantity = document.querySelectorAll('.basket__value')
+    let total = 0
+    quantity.forEach((i)=>{
+        const intQuantity = parseInt(i.textContent)
+        total += intQuantity
+    })
+    const quantityText = document.querySelector('.basket__page')
+    quantityText.textContent = `${total}`
+    // const quantity = document.querySelector('.basket__page')
+    // const intQuantity = parseInt(quantity.textContent)
+    // const bsktInner = document.querySelector('.basket__card-inner')
+    // const bsktInnerChilds = bsktInner.childElementCount;
+    // quantity.textContent = `${bsktInnerChilds}`;
 }
 basketQuantity()
 
@@ -229,10 +237,88 @@ menuCardBasket.forEach((btn, index) => {
         const btn = document.querySelector(`.btn-${index}`)
         const page = document.querySelector(`.page-${index}`)
         if (btn) {
-            console.log(`${index}`);
+            // console.log(`${index}`);
             body.classList.toggle('active')
             blackout.classList.toggle('active')
             purchasePage[`${index}`].classList.toggle('active')
         }
     })
+})
+
+
+// purchase__page-btn
+// main
+
+document.addEventListener('click', (event)=>{
+    i = event.target
+    // console.log(i)
+    if (i.classList.contains('purchase__page-btn')) {
+        const basketPageInner = document.querySelector('.basket__card-inner')
+        
+        const basketSlide = document.createElement('div')
+        basketSlide.classList.add('swiper-slide', 'basket__card-slide');
+        basketPageInner.appendChild(basketSlide)
+
+        const basketCard = document.createElement('div')
+        basketCard.classList.add('basket__card')
+        basketSlide.appendChild(basketCard)
+
+        const basketImgDiv = document.createElement('div')
+        basketImgDiv.classList.add('basket__card__img')
+        const basketImg = document.createElement('img')
+        basketImgDiv.appendChild(basketImg)
+        basketCard.appendChild(basketImgDiv)
+
+        const card = i.closest('.menu__card')
+        const cardImg = card.querySelector('.menu__card__img')
+        if (cardImg && basketImg) {
+            const srcImg = cardImg.getAttribute('src')
+            basketImg.setAttribute('src', srcImg)
+        }  else {
+            console.log('Один из элементов img не найден');
+        }
+
+        const cardTitle = card.querySelector('.menu__card__title')
+        const basketTitle = document.createElement('h2')
+        basketTitle.textContent = cardTitle.textContent
+        basketTitle.classList.add('basket__card__title')
+        basketCard.appendChild(basketTitle)
+
+        const basketDeleteDiv = document.createElement('div')
+        basketDeleteDiv.classList.add('basket__card__delete')
+        basketCard.appendChild(basketDeleteDiv)
+        const basketDelete = document.createElement('img')
+        basketDelete.classList.add('basket__card__delete')
+        basketDelete.setAttribute('src', 'img/basket.svg')
+        basketDeleteDiv.appendChild(basketDelete)
+
+        const basketRange = document.createElement('div')
+        basketRange.classList.add('basket__card__range')
+        basketCard.appendChild(basketRange)
+        const basketMinus = document.createElement('div')
+        basketMinus.classList.add('basket__card__range__item', 'basket__minus')
+        basketMinus.textContent = '-'
+        basketRange.appendChild(basketMinus)
+        const basketValue = document.createElement('div')
+        basketValue.classList.add('basket__card__range__item', 'basket__value')
+        basketValue.textContent = '1'
+        basketRange.appendChild(basketValue)
+        const basketPlus = document.createElement('div')
+        basketPlus.classList.add('basket__card__range__item', 'basket__plus')
+        basketPlus.textContent = '+'
+        basketRange.appendChild(basketPlus)
+
+        const cardPrice = card.querySelector('.menu__card__price')
+        const basketPrice = document.createElement('div')
+        let cardPriceInt = cardPrice.textContent
+        let priceMatch = cardPriceInt.match(/\d+/)
+        if (priceMatch) {
+            let cardPriceInt = parseInt(priceMatch[0])
+            basketPrice.classList.add('basket__card__price')
+            basketPrice.textContent = cardPriceInt + " ₽"
+            basketCard.appendChild(basketPrice)
+        }
+        sumPriceFun()
+        basketQuantity()
+    }
 })
