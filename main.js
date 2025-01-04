@@ -33,7 +33,7 @@ new Swiper ('.purchase__page-third__choice', {
     direction: 'vertical',
     spaceBetween: 150,
 })
-new Swiper ('.basket__card__container', {
+const basketSlider = new Swiper ('.basket__card__container', {
     slidesPerView: 2,
     slidesPerGroup: 1,
     mousewheel: {
@@ -41,6 +41,7 @@ new Swiper ('.basket__card__container', {
     },
     direction: 'vertical',
     spaceBetween: 15,
+    observer: true,
 })
 new Swiper ('.basket__bottom', {
     slidesPerView: 1.2,
@@ -253,6 +254,7 @@ document.addEventListener('click', (event)=>{
     i = event.target
     // console.log(i)
     if (i.classList.contains('purchase__page-btn')) {
+        // Добавление в окно корзины
         const basketPageInner = document.querySelector('.basket__card-inner')
         
         const basketSlide = document.createElement('div')
@@ -320,5 +322,18 @@ document.addEventListener('click', (event)=>{
         }
         sumPriceFun()
         basketQuantity()
+        basketSlider.update()
+        // Добавление на хтмл страниицу корзины
+        const createSessionStorage = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
+        const cardText = document.querySelector('.menu__card__p')
+        const newBasketCard = {
+            title: cardTitle.textContent,
+            text: cardText.textContent,
+            imgSrc: cardImg.getAttribute('src'),
+            id: 'basket_card-' + createSessionStorage.length + 1,
+            price: cardPrice.textContent
+        }
+        createSessionStorage.push(newBasketCard)
+        sessionStorage.setItem('newBasketCard', JSON.stringify(createSessionStorage));
     }
 })
