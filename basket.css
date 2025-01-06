@@ -106,6 +106,8 @@
     margin-top: 9px;
     margin-bottom: auto;
     margin-left: 25px;
+    max-height: 40px;
+    overflow: hidden;
 }
 .basket-main__catalog-card__price {
     margin: 0 auto;

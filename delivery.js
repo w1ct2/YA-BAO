@@ -1,3 +1,13 @@
+const catalogSlider = new Swiper ('.form-composition-catalog', {
+    slidesPerView: 4,
+    slidesPerGroup: 1,
+    mousewheel: {
+        sensitivity: 1,
+    },
+    direction: 'vertical',
+    spaceBetween: 20,
+    observer: true,
+})
 const paymentMethodFormCard2 = document.getElementById('payment__method-form__card-2')
 const paymentMethodFormCard1 = document.getElementById('payment__method-form__card-1')
 const paymentMethodFormCard = document.querySelector('.payment__method-form__card')
@@ -19,77 +29,41 @@ if (paymentMethodFormCard2) {
     });
 }
 
+const createSessionStorage = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
+const catalog = document.querySelector('.form-composition-catalog')
+const catalogInner = document.querySelector('.form-composition-catalog__inner')
+createSessionStorage.forEach(element => {
+    const card = document.createElement('div')
+    card.classList.add('form-composition-catalog-item', 'swiper-slide')
+    catalogInner.appendChild(card)
 
+    const catalogTitle = document.createElement('h4')
+    catalogTitle.textContent = element.title
+    card.appendChild(catalogTitle)
 
-{/* <div class="swiper-slide basket__card-slide">
-    <div class="basket__card" id="basket__card-1">
-        <div class="basket__card__img"><img src="img/pizza1.png" alt=""></></div>
-        <div class="basket__card__title">С креветками и трюфелями</div>
-        <div class="basket__card__delete">
-            <img src="img/basket.svg" alt="" class="basket__card__delete">
-            </></div>
-        <div class="basket__card__range">
-            <div class="basket__card__range__item basket__minus">-</div>
-            <div class="basket__card__range__item basket__value">1</div>
-            <div class="basket__card__range__item basket__plus">+</div>
-        </div>
-        <div class="basket__card__price">700 ₽</div>
-    </div>
-</div>
-<div class="swiper-slide basket__card-slide">
-    <div class="basket__card" id="basket__card-2">
-        <div class="basket__card__img"><img src="img/pasta2.png" alt=""></div>
-        <div class="basket__card__title">С креветками и трюфелями</div>
-        <div class="basket__card__delete" class="basket__card__delete">
-            <img src="img/basket.svg" alt="" class="basket__card__delete">
-        </div>
-        <div class="basket__card__range">
-            <div class="basket__card__range__item basket__minus">-</div>
-            <div class="basket__card__range__item basket__value">1</div>
-            <div class="basket__card__range__item basket__plus">+</div>
-        </div>
-        <div class="basket__card__price">233 ₽</div>
-</div>
-<div class="swiper-slide basket__card-slide">
-    <div class="basket__card" id="basket__card-3">
-        <div class="basket__card__img"><img src="img/antipasts.png" alt=""></div>
-        <div class="basket__card__title">С креветками и трюфелями</div>
-        <div class="basket__card__delete">
-            <img src="img/basket.svg" alt="" class="basket__card__delete">
-        </div>
-        <div class="basket__card__range">
-            <div class="basket__card__range__item basket__minus">-</div>
-            <div class="basket__card__range__item basket__value">1</div>
-            <div class="basket__card__range__item basket__plus">+</div>
-        </div>
-        <div class="basket__card__price">444 ₽</div>
-</div>
-<div class="swiper-slide basket__card-slide">
-    <div class="basket__card" id="basket__card-4">
-        <div class="basket__card__img"><img src="img/soup.png" alt=""></div>
-        <div class="basket__card__title">С креветками и трюфелями</div>
-        <div class="basket__card__delete">
-            <img src="img/basket.svg" alt="" class="basket__card__delete">
-        </div>
-        <div class="basket__card__range">
-            <div class="basket__card__range__item basket__minus">-</div>
-            <div class="basket__card__range__item basket__value">1</div>
-            <div class="basket__card__range__item basket__plus">+</div>
-        </div>
-        <div class="basket__card__price">385 ₽</div>
-</div>
-<div class="swiper-slide basket__card-slide">
-    <div class="basket__card" id="basket__card-5">
-        <div class="basket__card__img"><img src="img/soup2.png" alt=""></div>
-        <div class="basket__card__title">С креветками и трюфелями</div>
-        <div class="basket__card__delete">
-            <img src="img/basket.svg" alt="" class="basket__card__delete">
-        </div>
-        <div class="basket__card__range">
-            <div class="basket__card__range__item basket__minus">-</div>
-            <div class="basket__card__range__item basket__value">1</div>
-            <div class="basket__card__range__item basket__plus">+</div>
-        </div>
-        <div class="basket__card__price">375 ₽</div>
-    </div>
-</div> */}
+    const catalogText = document.createElement('p')
+    catalogText.textContent = element.text
+    card.appendChild(catalogText)
+
+    const catalogPrice = document.createElement('div')
+    catalogPrice.textContent = element.price.replace('От ', '')
+    card.appendChild(catalogPrice)
+    
+    catalogSlider.update()
+})
+
+function sumPriceFun() {
+    const priceList = document.querySelectorAll('.form-composition-catalog-item div')
+    let total = 0
+    priceList.forEach((priceEl)=>{
+        const priceText = priceEl.textContent.replace('₽', '').trim();
+        const price = parseInt(priceText)
+        total += price
+    })
+    const sumPrice = document.querySelector('.form-composition__price span')
+    sumPrice.textContent = `${total} ₽`
+
+    const sumPriceBtn = document.querySelector('.payment__method-link-forward span')
+    sumPriceBtn.textContent = `${total} ₽`
+}
+sumPriceFun()
