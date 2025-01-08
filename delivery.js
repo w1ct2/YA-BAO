@@ -35,6 +35,7 @@ const catalogInner = document.querySelector('.form-composition-catalog__inner')
 createSessionStorage.forEach(element => {
     const card = document.createElement('div')
     card.classList.add('form-composition-catalog-item', 'swiper-slide')
+    card.dataset.id = element.id
     catalogInner.appendChild(card)
 
     const catalogTitle = document.createElement('h4')

@@ -185,9 +185,13 @@ basketPageContainer.addEventListener('click', (event)=>{
     }
     if (i.classList.contains('basket__card__delete')) {
         const card = i.closest('.basket__card-slide')
-        card.remove()
-        sumPriceFun()
-        basketQuantity()
+        const cardId = card.dataset.id
+        let basketData = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
+        basketData = basketData.filter(item => item.id !== cardId);
+        sessionStorage.setItem('newBasketCard', JSON.stringify(basketData));
+        card.remove();
+        sumPriceFun();
+        basketQuantity();
     }
 })
 
@@ -247,93 +251,106 @@ menuCardBasket.forEach((btn, index) => {
 })
 
 
-// purchase__page-btn
-// main
 
-document.addEventListener('click', (event)=>{
-    i = event.target
-    // console.log(i)
-    if (i.classList.contains('purchase__page-btn')) {
-        // Добавление в окно корзины
-        const basketPageInner = document.querySelector('.basket__card-inner')
-        
-        const basketSlide = document.createElement('div')
+// Функция рендера карточек из sessionStorage
+function renderBasketCards() {
+    const basketPageInner = document.querySelector('.basket__card-inner');
+    basketPageInner.innerHTML = '';
+    const createSessionStorage = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
+    createSessionStorage.forEach(element => {
+        const basketSlide = document.createElement('div');
         basketSlide.classList.add('swiper-slide', 'basket__card-slide');
-        basketPageInner.appendChild(basketSlide)
+        basketSlide.dataset.id = element.id
+        basketPageInner.appendChild(basketSlide);
 
-        const basketCard = document.createElement('div')
-        basketCard.classList.add('basket__card')
-        basketSlide.appendChild(basketCard)
+        const basketCard = document.createElement('div');
+        basketCard.classList.add('basket__card');
+        basketSlide.appendChild(basketCard);
 
-        const basketImgDiv = document.createElement('div')
-        basketImgDiv.classList.add('basket__card__img')
-        const basketImg = document.createElement('img')
-        basketImgDiv.appendChild(basketImg)
-        basketCard.appendChild(basketImgDiv)
+        const basketImgDiv = document.createElement('div');
+        basketImgDiv.classList.add('basket__card__img');
+        const basketImg = document.createElement('img');
+        basketImg.setAttribute('src', element.imgSrc);
+        basketImgDiv.appendChild(basketImg);
+        basketCard.appendChild(basketImgDiv);
 
-        const card = i.closest('.menu__card')
-        const cardImg = card.querySelector('.menu__card__img')
-        if (cardImg && basketImg) {
-            const srcImg = cardImg.getAttribute('src')
-            basketImg.setAttribute('src', srcImg)
-        }  else {
-            console.log('Один из элементов img не найден');
-        }
+        const basketTitle = document.createElement('h2');
+        basketTitle.textContent = element.title;
+        basketTitle.classList.add('basket__card__title');
+        basketCard.appendChild(basketTitle);
 
-        const cardTitle = card.querySelector('.menu__card__title')
-        const basketTitle = document.createElement('h2')
-        basketTitle.textContent = cardTitle.textContent
-        basketTitle.classList.add('basket__card__title')
-        basketCard.appendChild(basketTitle)
+        const basketDeleteDiv = document.createElement('div');
+        basketDeleteDiv.classList.add('basket__card__delete');
+        basketCard.appendChild(basketDeleteDiv);
 
-        const basketDeleteDiv = document.createElement('div')
-        basketDeleteDiv.classList.add('basket__card__delete')
-        basketCard.appendChild(basketDeleteDiv)
-        const basketDelete = document.createElement('img')
-        basketDelete.classList.add('basket__card__delete')
-        basketDelete.setAttribute('src', 'img/basket.svg')
-        basketDeleteDiv.appendChild(basketDelete)
+        const basketDelete = document.createElement('img');
+        basketDelete.classList.add('basket__card__delete');
+        basketDelete.setAttribute('src', 'img/basket.svg');
+        basketDeleteDiv.appendChild(basketDelete);
 
-        const basketRange = document.createElement('div')
-        basketRange.classList.add('basket__card__range')
-        basketCard.appendChild(basketRange)
-        const basketMinus = document.createElement('div')
-        basketMinus.classList.add('basket__card__range__item', 'basket__minus')
-        basketMinus.textContent = '-'
-        basketRange.appendChild(basketMinus)
-        const basketValue = document.createElement('div')
-        basketValue.classList.add('basket__card__range__item', 'basket__value')
-        basketValue.textContent = '1'
-        basketRange.appendChild(basketValue)
-        const basketPlus = document.createElement('div')
-        basketPlus.classList.add('basket__card__range__item', 'basket__plus')
-        basketPlus.textContent = '+'
-        basketRange.appendChild(basketPlus)
+        const basketRange = document.createElement('div');
+        basketRange.classList.add('basket__card__range');
+        basketCard.appendChild(basketRange);
 
-        const cardPrice = card.querySelector('.menu__card__price')
-        const basketPrice = document.createElement('div')
-        let cardPriceInt = cardPrice.textContent
-        let priceMatch = cardPriceInt.match(/\d+/)
-        if (priceMatch) {
-            let cardPriceInt = parseInt(priceMatch[0])
-            basketPrice.classList.add('basket__card__price')
-            basketPrice.textContent = cardPriceInt + " ₽"
-            basketCard.appendChild(basketPrice)
-        }
-        sumPriceFun()
-        basketQuantity()
-        basketSlider.update()
-        // Добавление на хтмл страниицу корзины
+        const basketMinus = document.createElement('div');
+        basketMinus.classList.add('basket__card__range__item', 'basket__minus');
+        basketMinus.textContent = '-';
+        basketRange.appendChild(basketMinus);
+
+        const basketValue = document.createElement('div');
+        basketValue.classList.add('basket__card__range__item', 'basket__value');
+        basketValue.textContent = '1';
+        basketRange.appendChild(basketValue);
+
+        const basketPlus = document.createElement('div');
+        basketPlus.classList.add('basket__card__range__item', 'basket__plus');
+        basketPlus.textContent = '+';
+        basketRange.appendChild(basketPlus);
+
+        const basketPrice = document.createElement('div');
+        basketPrice.classList.add('basket__card__price');
+        basketPrice.textContent = element.price.replace('От ', '');
+        basketCard.appendChild(basketPrice);
+    });
+
+    sumPriceFun()
+    basketQuantity()
+    basketSlider.update()
+}
+
+document.addEventListener('click', (event) => {
+    const i = event.target;
+
+    if (i.classList.contains('purchase__page-btn')) {
+        const card = i.closest('.menu__card');
+        if (!card) return;
+
+        const cardImg = card.querySelector('.menu__card__img');
+        const cardTitle = card.querySelector('.menu__card__title');
+        const cardText = card.querySelector('.menu__card__p');
+        const cardPrice = card.querySelector('.menu__card__price');
+
+        if (!cardImg || !cardTitle || !cardText || !cardPrice) return;
+
         const createSessionStorage = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
-        const cardText = document.querySelector('.menu__card__p')
+
         const newBasketCard = {
             title: cardTitle.textContent,
             text: cardText.textContent,
             imgSrc: cardImg.getAttribute('src'),
-            id: 'basket_card-' + createSessionStorage.length + 1,
+            id: 'basket_card-' + (createSessionStorage.length + 1),
             price: cardPrice.textContent
-        }
-        createSessionStorage.push(newBasketCard)
+        };
+
+        createSessionStorage.push(newBasketCard);
         sessionStorage.setItem('newBasketCard', JSON.stringify(createSessionStorage));
+
+        renderBasketCards();
     }
-})
+});
+
+document.addEventListener('DOMContentLoaded', renderBasketCards);
+
+
+
+//Cделать создание карточки в basket page на основе sessionStorage, а удаление элемента со всех страниц на основе удаления его из sessionStorage c помощью обработчика события прогрузки древа DOM

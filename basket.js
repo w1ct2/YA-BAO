@@ -65,6 +65,10 @@ basketMainCatalog.addEventListener('click', (event) => {
     }
     if (i.classList.contains('basket__card__delete')) {
         const card = i.closest('.basket-main__catalog-card') 
+        const cardId = card.dataset.id
+        let basketData = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
+        basketData = basketData.filter(item => item.id !== cardId);
+        sessionStorage.setItem('newBasketCard', JSON.stringify(basketData));
         card.remove()
         sumPriceFun()
     }
@@ -88,6 +92,8 @@ const catalog = document.querySelector('.basket-main__catalog')
 createSessionStorage.forEach(element => {
     const card = document.createElement('div');
     card.classList.add('basket-main__catalog-card')
+    card.dataset.id = element.id
+
     const cardImg = document.createElement('div')
     cardImg.classList.add('basket-main__catalog-card__img')
     const cardImgSrc = document.createElement('img')
