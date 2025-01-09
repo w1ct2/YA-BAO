@@ -255,14 +255,21 @@ menuCardBasket.forEach((btn, index) => {
 // Функция рендера карточек из sessionStorage
 function renderBasketCards() {
     const basketPageInner = document.querySelector('.basket__card-inner');
-    basketPageInner.innerHTML = '';
+    if (basketPageInner) {
+        basketPageInner.innerHTML = '';
+    } else {
+        console.error('Элемент basketPageInner перезагружен');
+    }
     const createSessionStorage = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
     createSessionStorage.forEach(element => {
         const basketSlide = document.createElement('div');
         basketSlide.classList.add('swiper-slide', 'basket__card-slide');
         basketSlide.dataset.id = element.id
-        basketPageInner.appendChild(basketSlide);
-
+        if (basketPageInner) {
+            basketPageInner.appendChild(basketSlide);
+        } else {
+            console.error('Элемент basketPageInner перезагружен')
+        }
         const basketCard = document.createElement('div');
         basketCard.classList.add('basket__card');
         basketSlide.appendChild(basketCard);
@@ -350,7 +357,3 @@ document.addEventListener('click', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', renderBasketCards);
-
-
-
-//Cделать создание карточки в basket page на основе sessionStorage, а удаление элемента со всех страниц на основе удаления его из sessionStorage c помощью обработчика события прогрузки древа DOM

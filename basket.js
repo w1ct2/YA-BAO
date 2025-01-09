@@ -5,9 +5,9 @@ new Swiper ('.basket-main__optional__swiper', {
     spaceBetween: 20,
 })
 const basketLinkForward = document.querySelector('.basket-main__actions__link-forward')
-const whereToDeliver = document.querySelector('.where-to-deliver')
+const whereToDelivery = document.querySelector('.where-to-deliver')
 basketLinkForward.addEventListener('click', ()=>{
-    whereToDeliver.classList.add('active')
+    whereToDelivery.classList.add('active')
     blackout.classList.add('active')
     body.classList.add('active')
 })
@@ -16,13 +16,13 @@ const blackout = document.querySelector('.blackout')
 blackout.addEventListener('click', () => {
     blackout.classList.remove('active')
     body.classList.remove('active')
-    whereToDeliver.classList.remove('active')
+    whereToDelivery.classList.remove('active')
     deliveryTime.classList.remove('active')
 })
-const whereToDeliverBtn = document.querySelector('.where-to-deliver__btn')
+const whereToDeliveryBtn = document.querySelector('.where-to-deliver__btn')
 const deliveryTime = document.querySelector('.delivery-time')
-whereToDeliverBtn.addEventListener('click', ()=>{
-    whereToDeliver.classList.remove('active')
+whereToDeliveryBtn.addEventListener('click', ()=>{
+    whereToDelivery.classList.remove('active')
     blackout.classList.add('active')
     body.classList.add('active')
     deliveryTime.classList.add('active')
@@ -32,6 +32,9 @@ deliveryTime.addEventListener('click', (event)=>{
     const i = event.target
     if (i.classList.contains("delivery-time__radio")) {
         if (i.checked) {
+            const label = document.querySelector(`label[for="${i.id}"]`);
+            const labelText = label.textContent
+            sessionStorage.setItem('time', labelText)
             window.location.href = 'delivery.html'
         }
     }
@@ -147,4 +150,26 @@ createSessionStorage.forEach(element => {
 
     catalog.appendChild(card);
     sumPriceFun()
+})
+
+const whereToDeliveryInput = document.getElementById('where-to-deliver__form-main-1')
+whereToDeliveryInput.addEventListener('input', (i)=>{
+    const inputValue = i.target.value
+    sessionStorage.setItem('address', inputValue)
+})
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    if (sessionStorage.getItem('address-active')) {
+        whereToDelivery.classList.add(sessionStorage.getItem('address-active'))
+        blackout.classList.add(sessionStorage.getItem('address-active'))
+        whereToDeliveryInput.focus()
+        sessionStorage.removeItem('address-active', 'active')
+    }
+})
+document.addEventListener('DOMContentLoaded', ()=>{
+    if (sessionStorage.getItem('time-active')) {
+        deliveryTime.classList.add(sessionStorage.getItem('time-active'))
+        blackout.classList.add(sessionStorage.getItem('time-active'))
+        sessionStorage.removeItem('time-active', 'active')
+    }
 })

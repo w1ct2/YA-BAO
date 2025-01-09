@@ -68,3 +68,28 @@ function sumPriceFun() {
     sumPriceBtn.textContent = `${total} ₽`
 }
 sumPriceFun()
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    const addressInput = document.getElementById('blank__address')
+    const addressValue = sessionStorage.getItem('address')
+    addressInput.value = addressValue
+
+    const time = document.getElementById('blank__time')
+    const timeValue = sessionStorage.getItem('time')
+    time.value = timeValue
+})
+
+const addressBtn = document.getElementById('blank__address__btn-1')
+addressBtn.addEventListener('click', (i)=>{
+    i.preventDefault()
+    sessionStorage.setItem('address-active', 'active')
+    window.location.href = 'basket.html'
+})
+
+const timeBtn = document.querySelector('.blank__time-btn')
+timeBtn.addEventListener('click', (i)=>{
+    i.preventDefault()
+    sessionStorage.setItem('time-active', 'active')
+    window.location.href = 'basket.html'
+})
+
