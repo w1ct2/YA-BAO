@@ -50,12 +50,6 @@ new Swiper ('.basket__bottom', {
     },
     spaceBetween: 15,
 })
-// new Swiper ('.basket-main__optional__swiper', {
-//     slidesPerView: 3,
-//     slidesPerGroup: 1,
-//     freeMode: true,
-//     spaceBetween: 20,
-// })
 const body = document.querySelector('body')
 const blackout = document.querySelector('.blackout')
 const enterBtn = document.querySelector('.enter__btn')
@@ -67,11 +61,6 @@ const enterRegPagePhoneInput = document.getElementById('enter-reg__page-input')
 const enterRegPageBtn = document.querySelector('.enter-reg__page-button')
 const basketPage = document.querySelector('.basket__page')
 const basketPageContainer = document.querySelector('.basket__page__container')
-// const basketPlus = document.querySelector('#basket__plus')
-// const basketValue = document.querySelector('#basket__value')
-// const basketMinus = document.querySelector('#basket__minus')
-// const basketPrice = document.querySelector('.basket__card__price')
-// const initPrice = parseInt(basketPrice.textContent, 10);
 const burgerBtn = document.querySelector('.burger__btn');
 const burgerOptions = document.querySelector('.burger__options');
 const burgerClose = document.querySelector('.burger__close')
@@ -95,17 +84,25 @@ enterBtn.addEventListener('click', ()=> {
 enterRegPage.addEventListener('click', (e)=>{
     e.stopPropagation()
 })
+document.addEventListener('DOMContentLoaded', ()=>{
+    if (localStorage.getItem('codeActive')) {
+        enterRegPage.classList.add(localStorage.getItem('codeActive'))
+        blackout.classList.add('active')
+        renderEnterPage()
+        localStorage.removeItem('codeActive')
+    }
+    if (localStorage.getItem('phoneActive')) {
+        enterRegPage.classList.add(localStorage.getItem('phoneActive'))
+        blackout.classList.add('active')
+        localStorage.removeItem('phoneActive')
+    }
+})
 enterRegLink.addEventListener('click', ()=>{
     enterRegPage.classList.add('active')
     blackout.classList.toggle('active')
     body.classList.toggle('active')
 })
-
-// const enterRegPagePhoneInputValue = document.getElementById('enter-reg__page-input').value
-// const rePhone = /^[\d\+][\d\(\)\ -]{4,14}\d$/
-// const validPhone = rePhone.test(enterRegPagePhoneInputValue)
-
-enterRegPageBtn.addEventListener('click', ()=>{
+const renderEnterPage = function() {
     const enterRegPageCode = document.createElement('form')
     enterRegPageCode.className = 'enter-reg__page-code'
     enterRegPage.appendChild(enterRegPageCode)
@@ -119,6 +116,11 @@ enterRegPageBtn.addEventListener('click', ()=>{
 
     const enterRegPageCodeInput = document.createElement('input')
     enterRegPageCode.appendChild(enterRegPageCodeInput)
+    enterRegPageCodeInput.addEventListener('input', (i)=>{
+        const value = i.target.value
+        i.target.value = value.replace(/\D/g, '')
+        localStorage.setItem('code', value)
+    })
 
     const enterRegPageCodeBtn = document.createElement('button')
     enterRegPageCodeBtn.textContent = 'Получить новый код'
@@ -146,7 +148,9 @@ enterRegPageBtn.addEventListener('click', ()=>{
             enterRegPagePhoneConfirmedBtn.remove()
         }
     })
-})
+}
+enterRegPageBtn.addEventListener('click', renderEnterPage)
+
 basketPage.addEventListener('click', () => {
     basketPageContainer.classList.toggle('active')
     enterPage.classList.remove('active')
@@ -357,3 +361,10 @@ document.addEventListener('click', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', renderBasketCards);
+
+
+const inputPhone = document.getElementById('enter-reg__page-input')
+inputPhone.addEventListener('input', (i)=>{
+    const inputPhoneValue = i.target.value 
+    localStorage.setItem('mainPhone', inputPhoneValue)
+})
