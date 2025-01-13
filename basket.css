@@ -180,9 +180,13 @@
 }
 .optional__title {
     color: rgba(0, 0, 0, 1);
+    max-height: 90%;
+    max-width: 135px;
     font-size: 13px;
     font-weight: 600;
     line-height: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .optional__price {
     color: rgba(255, 46, 101, 1);

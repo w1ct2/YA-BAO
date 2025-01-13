@@ -155,7 +155,6 @@ input:focus, textarea:focus, select:focus {
     align-items: center;
     margin-top: 10px;
     gap: 20px;
-    align-items: center;
 }
 .options {
     height: 40px;
@@ -191,6 +190,9 @@ input:focus, textarea:focus, select:focus {
     width: 70px;
     position: relative;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .enter__page__container {
     display: none;
@@ -791,6 +793,7 @@ input:focus, textarea:focus, select:focus {
     font-weight: 600;
     margin-bottom: 20px;
     margin-top: 15px;
+    font-size: 16px;
 }
 .enter__page__burger {
     background-color: rgba(255, 255, 255, 1);
@@ -849,12 +852,21 @@ input:focus, textarea:focus, select:focus {
 @media (max-width: 1000px) {
     .burger__btn {
         display: flex;
-        margin-left: 110px;
+        margin-left: 10px;
     }
-    .enter__basket__container {
+    .logo__container {
+        margin-right: auto;
+    }
+    .phone__btn{
         display: none;
     }
-    .phone__container {
+    .phone__btn.burger {
+        display: flex;
+    }
+    .phone.select__on.burger {
+        display: none;
+    }
+    .basket {
         display: none;
     }
     .logo__title {
@@ -865,6 +877,13 @@ input:focus, textarea:focus, select:focus {
     }
     .delivery__container {
         display: none;
+    }
+    .nav__header {
+        justify-content: flex-end;
+    }
+    .enter__btn {
+        border-radius: 8px;
+        border: 1.5px solid rgba(105, 111, 122, 1);
     }
 }
 @media (max-width: 700px) {
@@ -892,6 +911,15 @@ input:focus, textarea:focus, select:focus {
     .nav__options {
         margin-top: 15px;
     }
+    .enter__btn {
+        font-size: 14px;
+    }
+    .basket {
+        width: 130px;
+    }
+    .basket__link {
+        font-size: 14px;
+    }
 }
 @media (max-width: 480px) {
     .burger__options.active {
@@ -916,14 +944,14 @@ input:focus, textarea:focus, select:focus {
     max-width: 100%;
     max-height: 410px;
 }
-.slide__container {
-    max-height: 410px;
-}
-@media (max-width: 1000px) {
-}
 @media (max-width: 700px) {
     .prewiev {
         margin-top: 12px;
+    }
+}
+@media (max-width: 480px) {
+    .prewiev {
+        display: none;
     }
 }
 /* --------------------------------------------------------------- */

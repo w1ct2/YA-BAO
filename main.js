@@ -1,3 +1,4 @@
+// Свайперы
 new Swiper('.prewiev__slider', {
     grabCursor: true,
     loop: true,
@@ -50,6 +51,7 @@ new Swiper ('.basket__bottom', {
     },
     spaceBetween: 15,
 })
+// Переменные
 const body = document.querySelector('body')
 const blackout = document.querySelector('.blackout')
 const enterBtn = document.querySelector('.enter__btn')
@@ -66,24 +68,10 @@ const burgerOptions = document.querySelector('.burger__options');
 const burgerClose = document.querySelector('.burger__close')
 const menuCardBasket = document.querySelectorAll('.menu__card__basket')
 const purchasePage = document.querySelectorAll('.purchase__page')
+const enterBurgerBtn = document.querySelector('.enter__burger')
+const inputPhone = document.getElementById('enter-reg__page-input')
 
-blackout.addEventListener('click', () => {
-    burgerOptions.classList.remove('active')
-    blackout.classList.remove('active')
-    burgerBtn.classList.remove('active')
-    body.classList.remove('active')
-    for (i = 0; i < purchasePage.length; i++) {
-        purchasePage[i].classList.remove('active')
-    }
-    enterRegPage.classList.remove('active')
-})
-enterBtn.addEventListener('click', ()=> {
-    enterPage.classList.toggle('active')
-    basketPageContainer.classList.remove('active')
-})
-enterRegPage.addEventListener('click', (e)=>{
-    e.stopPropagation()
-})
+// Переход с enter страницы на окно "Войти"
 document.addEventListener('DOMContentLoaded', ()=>{
     if (localStorage.getItem('codeActive')) {
         enterRegPage.classList.add(localStorage.getItem('codeActive'))
@@ -97,11 +85,39 @@ document.addEventListener('DOMContentLoaded', ()=>{
         localStorage.removeItem('phoneActive')
     }
 })
+
+// Затемнение
+blackout.addEventListener('click', () => {
+    burgerOptions.classList.remove('active')
+    blackout.classList.remove('active')
+    burgerBtn.classList.remove('active')
+    body.classList.remove('active')
+    for (i = 0; i < purchasePage.length; i++) {
+        purchasePage[i].classList.remove('active')
+    }
+    enterRegPage.classList.remove('active')
+})
+
+enterBtn.addEventListener('click', ()=> {
+    enterPage.classList.toggle('active')
+    basketPageContainer.classList.remove('active')
+})
+enterBurgerBtn.addEventListener('click', ()=>{
+    burgerOptions.classList.remove('active')
+    blackout.classList.remove('active')
+    enterPage.classList.add('active')
+    burgerBtn.classList.remove('active')
+})
+enterRegPage.addEventListener('click', (e)=>{
+    e.stopPropagation()
+})
 enterRegLink.addEventListener('click', ()=>{
     enterRegPage.classList.add('active')
     blackout.classList.toggle('active')
     body.classList.toggle('active')
 })
+
+// Рендер окна "Войти"
 const renderEnterPage = function() {
     const enterRegPageCode = document.createElement('form')
     enterRegPageCode.className = 'enter-reg__page-code'
@@ -150,12 +166,10 @@ const renderEnterPage = function() {
     })
 }
 enterRegPageBtn.addEventListener('click', renderEnterPage)
-
 basketPage.addEventListener('click', () => {
     basketPageContainer.classList.toggle('active')
     enterPage.classList.remove('active')
 })
-
 basketPageContainer.addEventListener('click', (event)=>{
     const i = event.target;
     if (i.classList.contains('basket__minus') || i.classList.contains('basket__plus')) {
@@ -190,15 +204,16 @@ basketPageContainer.addEventListener('click', (event)=>{
     if (i.classList.contains('basket__card__delete')) {
         const card = i.closest('.basket__card-slide')
         const cardId = card.dataset.id
-        let basketData = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
+        let basketData = JSON.parse(localStorage.getItem('newBasketCard')) || [];
         basketData = basketData.filter(item => item.id !== cardId);
-        sessionStorage.setItem('newBasketCard', JSON.stringify(basketData));
+        localStorage.setItem('newBasketCard', JSON.stringify(basketData));
         card.remove();
         sumPriceFun();
         basketQuantity();
     }
 })
 
+// Функция подсчета итоговой стоимости
 function sumPriceFun() {
     const priceList = document.querySelectorAll('.basket__card__price')
     let total = 0
@@ -211,7 +226,7 @@ function sumPriceFun() {
     sumPrice.textContent = `${total} ₽`
 }
 sumPriceFun()
-
+// Функция подсчета товаров в корзине
 function basketQuantity() {
     const quantity = document.querySelectorAll('.basket__value')
     let total = 0
@@ -221,11 +236,6 @@ function basketQuantity() {
     })
     const quantityText = document.querySelector('.basket__page')
     quantityText.textContent = `${total}`
-    // const quantity = document.querySelector('.basket__page')
-    // const intQuantity = parseInt(quantity.textContent)
-    // const bsktInner = document.querySelector('.basket__card-inner')
-    // const bsktInnerChilds = bsktInner.childElementCount;
-    // quantity.textContent = `${bsktInnerChilds}`;
 }
 basketQuantity()
 
@@ -241,12 +251,13 @@ burgerClose.addEventListener('click', () => {
     burgerBtn.classList.remove('active')
     body.classList.remove('active')
 })
+
+// Делегирование (кривое) всплывающего окна товара
 menuCardBasket.forEach((btn, index) => {
     btn.addEventListener('click', () => {
         const btn = document.querySelector(`.btn-${index}`)
         const page = document.querySelector(`.page-${index}`)
         if (btn) {
-            // console.log(`${index}`);
             body.classList.toggle('active')
             blackout.classList.toggle('active')
             purchasePage[`${index}`].classList.toggle('active')
@@ -254,9 +265,7 @@ menuCardBasket.forEach((btn, index) => {
     })
 })
 
-
-
-// Функция рендера карточек из sessionStorage
+// Рендер и создание карты товара
 function renderBasketCards() {
     const basketPageInner = document.querySelector('.basket__card-inner');
     if (basketPageInner) {
@@ -264,8 +273,8 @@ function renderBasketCards() {
     } else {
         console.error('Элемент basketPageInner перезагружен');
     }
-    const createSessionStorage = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
-    createSessionStorage.forEach(element => {
+    const createLocalStorage = JSON.parse(localStorage.getItem('newBasketCard')) || [];
+    createLocalStorage.forEach(element => {
         const basketSlide = document.createElement('div');
         basketSlide.classList.add('swiper-slide', 'basket__card-slide');
         basketSlide.dataset.id = element.id
@@ -329,6 +338,7 @@ function renderBasketCards() {
     basketSlider.update()
 }
 
+// Кнопка добавления товара в корзину
 document.addEventListener('click', (event) => {
     const i = event.target;
 
@@ -343,27 +353,24 @@ document.addEventListener('click', (event) => {
 
         if (!cardImg || !cardTitle || !cardText || !cardPrice) return;
 
-        const createSessionStorage = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
+        const createLocalStorage = JSON.parse(localStorage.getItem('newBasketCard')) || [];
 
         const newBasketCard = {
             title: cardTitle.textContent,
             text: cardText.textContent,
             imgSrc: cardImg.getAttribute('src'),
-            id: 'basket_card-' + (createSessionStorage.length + 1),
+            id: 'basket_card-' + (createLocalStorage.length + 1),
             price: cardPrice.textContent
         };
 
-        createSessionStorage.push(newBasketCard);
-        sessionStorage.setItem('newBasketCard', JSON.stringify(createSessionStorage));
+        createLocalStorage.push(newBasketCard);
+        localStorage.setItem('newBasketCard', JSON.stringify(createLocalStorage));
 
         renderBasketCards();
     }
 });
-
 document.addEventListener('DOMContentLoaded', renderBasketCards);
 
-
-const inputPhone = document.getElementById('enter-reg__page-input')
 inputPhone.addEventListener('input', (i)=>{
     const inputPhoneValue = i.target.value 
     localStorage.setItem('mainPhone', inputPhoneValue)

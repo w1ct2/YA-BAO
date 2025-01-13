@@ -29,10 +29,10 @@ if (paymentMethodFormCard2) {
     });
 }
 
-const createSessionStorage = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
+const createLocalStorage = JSON.parse(localStorage.getItem('newBasketCard')) || [];
 const catalog = document.querySelector('.form-composition-catalog')
 const catalogInner = document.querySelector('.form-composition-catalog__inner')
-createSessionStorage.forEach(element => {
+createLocalStorage.forEach(element => {
     const card = document.createElement('div')
     card.classList.add('form-composition-catalog-item', 'swiper-slide')
     card.dataset.id = element.id
@@ -70,6 +70,12 @@ function sumPriceFun() {
 sumPriceFun()
 
 document.addEventListener('DOMContentLoaded', ()=>{
+    const name = document.getElementById('blank__name')
+    name.value = localStorage.getItem('name')
+
+    const phone = document.getElementById('blank__phone')
+    phone.value = localStorage.getItem('mainPhone')
+
     const addressInput = document.getElementById('blank__address')
     const addressValue = sessionStorage.getItem('address')
     addressInput.value = addressValue

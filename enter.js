@@ -126,3 +126,15 @@ document.addEventListener('DOMContentLoaded',()=>{
         window.location.href = 'index.html'
     })
 })
+burgerBtn.addEventListener('click', () => {
+    burgerBtn.classList.toggle('active')
+    burgerOptions.classList.toggle('active')
+    body.classList.toggle('active')
+    blackout.classList.toggle('active')
+})
+burgerClose.addEventListener('click', () => {
+    burgerOptions.classList.remove('active')
+    blackout.classList.remove('active')
+    burgerBtn.classList.remove('active')
+    body.classList.remove('active')
+})

@@ -32,7 +32,93 @@
                     </div>
                     <div class="phone__container">
                         <a class="phone__btn" href="phone.html" title="Заказать звонок">Заказать звонок</a>
-                        <div class="phone select__on">8 800 333-36-62</div>
+                        <div class="enter__basket__container">
+                            <div class="enter__btn">Войти
+                                <div class="enter__page__container">
+                                    <span></span>
+                                    <img src="img/onion.png" alt="">
+                                    <div class="enter-reg__link">Войти</div>
+                                    <a href="enter.html" class="enter__link">Личный кабинет</a>
+                                </div>
+                                <div class="enter-reg__page">
+                                    <h2 class="enter-reg__page-title">Вход на сайт</h2>
+                                    <form class="enter-reg__page-phone">
+                                        <label for="enter-reg__page-input">Номер телефона</label>
+                                        <input type="text" id="enter-reg__page-input" pattern="(?:\+|\d)[\d\-\(\) ]{9,}\d">
+                                    </form>
+                                    <button class="enter-reg__page-button">Выслать код</button>
+                                    <article class="enter-reg__page-article">Продолжая, вы соглашаетесь со сбором и обработкой персональных данных и пользовательским соглашением</article>
+                                </div>
+                            </div>
+                            <div class="basket">
+                                <a href="basket.html" title="Перейти" class="basket__link">Корзина</a>
+                                <span></span>
+                                <div class="basket__page">0</div>
+                                <div class="basket__page__container">
+                                    <span></span>
+                                    <div class="basket__card__container swiper">
+                                        <div class="swiper-wrapper basket__card-inner">
+                                            <!-- <div class="swiper-slide basket__card-slide">
+                                                <div class="basket__card" id="basket__card-1">
+                                                    <div class="basket__card__img"><img src="img/pizza1.png" alt=""></div>
+                                                    <div class="basket__card__title">С креветками и трюфелями</div>
+                                                    <div class="basket__card__delete">
+                                                        <img src="img/basket.svg" alt="" class="basket__card__delete">
+                                                    </div> 
+                                                    <div class="basket__card__range">
+                                                        <div class="basket__card__range__item basket__minus">-</div>
+                                                        <div class="basket__card__range__item basket__value">1</div>
+                                                        <div class="basket__card__range__item basket__plus">+</div>
+                                                    </div>
+                                                    <div class="basket__card__price">700 ₽</div>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="basket__sum">
+                                        <h2 class="sum__text">Сумма заказа</h2>
+                                        <h2 class="sum__price">120 ₽</h2>
+                                        <a href="#" class="sum__link" title="Добавить к заказу?">Добавить к заказу?</a>
+                                    </div>
+                                    <div class="basket__bottom swiper">
+                                        <div class="swiper-wrapper">
+                                            <form class="swiper-slide">
+                                                <input type="checkbox" class="basket__bottom__item-input" id="basket__bottom__item-input-1" name="basket__bottom__item-input">
+                                                <label class="basket__bottom__item" id="basket__bottom__item-1" for="basket__bottom__item-input-1">
+                                                    <div class="basket__bottom__img"><img src="img/pizza2.png" alt=""></div>
+                                                    <div class="basket__bottom__title">Молочный коктель с приятным аро...</div>
+                                                    <div class="basket__bottom__price">от 120 ₽</div>
+                                                </label>
+                                            </form>
+                                            <form class="swiper-slide">
+                                                <input type="checkbox" class="basket__bottom__item-input" id="basket__bottom__item-input-2" name="basket__bottom__item-input">
+                                                <label class="basket__bottom__item" id="basket__bottom__item-2" for="basket__bottom__item-input-2">
+                                                    <div class="basket__bottom__img"><img src="img/soup2.png" alt=""></div>
+                                                    <div class="basket__bottom__title">Молочный коктель с приятным аро...</div>
+                                                    <div class="basket__bottom__price">от 120 ₽</div>
+                                                </label>
+                                            </form>
+                                            <form class="swiper-slide">
+                                                <input type="checkbox" class="basket__bottom__item-input" id="basket__bottom__item-input-3" name="basket__bottom__item-input">
+                                                <label class="basket__bottom__item" id="basket__bottom__item-3" for="basket__bottom__item-input-3">
+                                                    <div class="basket__bottom__img"><img src="img/pizza1.png" alt=""></div>
+                                                    <div class="basket__bottom__title">Молочный коктель с приятным аро...</div>
+                                                    <div class="basket__bottom__price">от 120 ₽</div>
+                                                </label>
+                                            </form>
+                                            <form class="swiper-slide">
+                                                <input type="checkbox" class="basket__bottom__item-input" id="basket__bottom__item-input-4" name="basket__bottom__item-input">
+                                                <label class="basket__bottom__item" id="basket__bottom__item-4" for="basket__bottom__item-input-4">
+                                                    <div class="basket__bottom__img"><img src="img/desserts.png" alt=""></div>
+                                                    <div class="basket__bottom__title">Молочный коктель с приятным аро...</div>
+                                                    <div class="basket__bottom__price">от 120 ₽</div>
+                                                </label>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 <!-- -----------------------Burger menu-----------------------------------------  -->
                     <div class="burger__btn">
@@ -42,7 +128,7 @@
                         <div class="burger__options__container">
                             <div class="burger__close"></div>
                             <span class="burger__span"></span>
-                            <a class="enter__burger" href="" title="Войти">Войти</a>
+                            <button type="button" class="enter__burger">Войти</button>
                             <a href="enter.html" class="enter__page__burger" title="Войти">Личный кабинет</a>
                             <a class="basket__burger" href="basket.html" title="Корзина">Корзина</a>
                             <a class="phone__btn burger" href="phone.html" title="Заказать звонок">Заказать звонок</a>
@@ -72,93 +158,6 @@
                             <a class="swiper-slide options__item" id="options__item8" href="#stocks" title="Перейти">Акции</a>
                             <a class="swiper-slide options__item" id="options__item9" href="#menu__eight" title="Перейти">Пицца</a>
                             <a class="swiper-slide options__item" id="options__item10" href="#footer" title="Перейти">Контакты</a>
-                        </div>
-                    </div>
-                    <div class="enter__basket__container">
-                        <div class="enter__btn">Войти
-                            <div class="enter__page__container">
-                                <span></span>
-                                <img src="img/onion.png" alt="">
-                                <div class="enter-reg__link">Войти</div>
-                                <a href="enter.html" class="enter__link">Личный кабинет</a>
-                            </div>
-                            <div class="enter-reg__page">
-                                <h2 class="enter-reg__page-title">Вход на сайт</h2>
-                                <form class="enter-reg__page-phone">
-                                    <label for="enter-reg__page-input">Номер телефона</label>
-                                    <input type="text" id="enter-reg__page-input" pattern="(?:\+|\d)[\d\-\(\) ]{9,}\d">
-                                </form>
-                                <button class="enter-reg__page-button">Выслать код</button>
-                                <article class="enter-reg__page-article">Продолжая, вы соглашаетесь со сбором и обработкой персональных данных и пользовательским соглашением</article>
-                            </div>
-                        </div>
-                        <div class="basket">
-                            <a href="basket.html" title="Перейти" class="basket__link">Корзина</a>
-                            <span></span>
-                            <div class="basket__page">0</div>
-                            <div class="basket__page__container">
-                                <span></span>
-                                <div class="basket__card__container swiper">
-                                    <div class="swiper-wrapper basket__card-inner">
-                                        <!-- <div class="swiper-slide basket__card-slide">
-                                            <div class="basket__card" id="basket__card-1">
-                                                <div class="basket__card__img"><img src="img/pizza1.png" alt=""></div>
-                                                <div class="basket__card__title">С креветками и трюфелями</div>
-                                                <div class="basket__card__delete">
-                                                    <img src="img/basket.svg" alt="" class="basket__card__delete">
-                                                </div> 
-                                                <div class="basket__card__range">
-                                                    <div class="basket__card__range__item basket__minus">-</div>
-                                                    <div class="basket__card__range__item basket__value">1</div>
-                                                    <div class="basket__card__range__item basket__plus">+</div>
-                                                </div>
-                                                <div class="basket__card__price">700 ₽</div>
-                                            </div>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="basket__sum">
-                                    <h2 class="sum__text">Сумма заказа</h2>
-                                    <h2 class="sum__price">120 ₽</h2>
-                                    <a href="#" class="sum__link" title="Добавить к заказу?">Добавить к заказу?</a>
-                                </div>
-                                <div class="basket__bottom swiper">
-                                    <div class="swiper-wrapper">
-                                        <form class="swiper-slide">
-                                            <input type="checkbox" class="basket__bottom__item-input" id="basket__bottom__item-input-1" name="basket__bottom__item-input">
-                                            <label class="basket__bottom__item" id="basket__bottom__item-1" for="basket__bottom__item-input-1">
-                                                <div class="basket__bottom__img"><img src="img/pizza2.png" alt=""></div>
-                                                <div class="basket__bottom__title">Молочный коктель с приятным аро...</div>
-                                                <div class="basket__bottom__price">от 120 ₽</div>
-                                            </label>
-                                        </form>
-                                        <form class="swiper-slide">
-                                            <input type="checkbox" class="basket__bottom__item-input" id="basket__bottom__item-input-2" name="basket__bottom__item-input">
-                                            <label class="basket__bottom__item" id="basket__bottom__item-2" for="basket__bottom__item-input-2">
-                                                <div class="basket__bottom__img"><img src="img/soup2.png" alt=""></div>
-                                                <div class="basket__bottom__title">Молочный коктель с приятным аро...</div>
-                                                <div class="basket__bottom__price">от 120 ₽</div>
-                                            </label>
-                                        </form>
-                                        <form class="swiper-slide">
-                                            <input type="checkbox" class="basket__bottom__item-input" id="basket__bottom__item-input-3" name="basket__bottom__item-input">
-                                            <label class="basket__bottom__item" id="basket__bottom__item-3" for="basket__bottom__item-input-3">
-                                                <div class="basket__bottom__img"><img src="img/pizza1.png" alt=""></div>
-                                                <div class="basket__bottom__title">Молочный коктель с приятным аро...</div>
-                                                <div class="basket__bottom__price">от 120 ₽</div>
-                                            </label>
-                                        </form>
-                                        <form class="swiper-slide">
-                                            <input type="checkbox" class="basket__bottom__item-input" id="basket__bottom__item-input-4" name="basket__bottom__item-input">
-                                            <label class="basket__bottom__item" id="basket__bottom__item-4" for="basket__bottom__item-input-4">
-                                                <div class="basket__bottom__img"><img src="img/desserts.png" alt=""></div>
-                                                <div class="basket__bottom__title">Молочный коктель с приятным аро...</div>
-                                                <div class="basket__bottom__price">от 120 ₽</div>
-                                            </label>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </nav>

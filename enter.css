@@ -332,6 +332,9 @@
     .enter-office__subscribe h3 {
         font-size: 22px;
     }
+    .phone__container {
+        display: none;
+    }
 }
 @media (max-width: 700px) {
     .bonuses__catalog {

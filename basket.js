@@ -69,9 +69,9 @@ basketMainCatalog.addEventListener('click', (event) => {
     if (i.classList.contains('basket__card__delete')) {
         const card = i.closest('.basket-main__catalog-card') 
         const cardId = card.dataset.id
-        let basketData = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
+        let basketData = JSON.parse(localStorage.getItem('newBasketCard')) || [];
         basketData = basketData.filter(item => item.id !== cardId);
-        sessionStorage.setItem('newBasketCard', JSON.stringify(basketData));
+        localStorage.setItem('newBasketCard', JSON.stringify(basketData));
         card.remove()
         sumPriceFun()
     }
@@ -90,9 +90,9 @@ function sumPriceFun() {
 }
 sumPriceFun()
 
-const createSessionStorage = JSON.parse(sessionStorage.getItem('newBasketCard')) || [];
+const createLocalStorage = JSON.parse(localStorage.getItem('newBasketCard')) || [];
 const catalog = document.querySelector('.basket-main__catalog')
-createSessionStorage.forEach(element => {
+createLocalStorage.forEach(element => {
     const card = document.createElement('div');
     card.classList.add('basket-main__catalog-card')
     card.dataset.id = element.id
@@ -171,5 +171,49 @@ document.addEventListener('DOMContentLoaded', ()=>{
         deliveryTime.classList.add(sessionStorage.getItem('time-active'))
         blackout.classList.add(sessionStorage.getItem('time-active'))
         sessionStorage.removeItem('time-active', 'active')
+    }
+})
+const optional = document.querySelector('.optional__wrapper')
+optional.addEventListener('click', (event)=>{
+    const card = event.target.closest('.basket-main__optional__item')
+    if (card) {
+        const priceElement = card.querySelector('.optional__price')
+        const price = parseInt(priceElement.textContent.replace('₽', '').replace('От', ''))
+        let finalPrice = document.querySelector('.basket-main__actions__price span')
+        let currentPrice = parseInt(finalPrice.textContent)
+        if (card.classList.contains('selected')) {
+            card.classList.remove('selected'); 
+            currentPrice += price;
+            sumPriceFun()
+        } else {
+            card.classList.add('selected'); 
+            currentPrice -= price; 
+            sumPriceFun()
+        }
+
+        finalPrice.textContent = `${currentPrice} ₽`;
+    }
+
+})
+
+const basketSauce = document.querySelector('.basket-main__sauce__container')
+basketSauce.addEventListener('click', (event)=>{
+    const card = event.target.closest('.sause-label')
+    if (card) {
+        const priceElement = card.querySelector('.basket-main__sauce__price')
+        const price = parseInt(priceElement.textContent.replace('₽', ''))
+        let finalPrice = document.querySelector('.basket-main__actions__price span')
+        let currentPrice = parseInt(finalPrice.textContent.replace('₽', ''))
+        if (card.classList.contains('selected')) {
+            card.classList.remove('selected'); 
+            currentPrice += price;
+            sumPriceFun()
+        } else {
+            card.classList.add('selected'); 
+            currentPrice -= price; 
+            sumPriceFun()
+        }
+
+        finalPrice.textContent = `${currentPrice} ₽`;
     }
 })
