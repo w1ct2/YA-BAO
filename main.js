@@ -70,6 +70,7 @@ const menuCardBasket = document.querySelectorAll('.menu__card__basket')
 const purchasePage = document.querySelectorAll('.purchase__page')
 const enterBurgerBtn = document.querySelector('.enter__burger')
 const inputPhone = document.getElementById('enter-reg__page-input')
+const newContainer = document.querySelector('.new__container')
 
 // Переход с enter страницы на окно "Войти"
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -199,7 +200,6 @@ basketPageContainer.addEventListener('click', (event)=>{
         value.textContent = `${intValue}`
         price.textContent = `${intPrice} ₽`
         sumPriceFun()
-        // basketQuantity()
     }
     if (i.classList.contains('basket__card__delete')) {
         const card = i.closest('.basket__card-slide')
@@ -264,6 +264,42 @@ menuCardBasket.forEach((btn, index) => {
         }
     })
 })
+
+// Окна new
+// newContainer.addEventListener('click', (event)=>{
+//     const card = event.target.closest('.new__card')
+//     if (card) {
+//         const purchasePage = card.querySelector('.purchase__page')
+//         purchasePage.classList.add('active')
+//         blackout.classList.add('active')
+//     }
+//     const btn = card.querySelector('.purchase__page-btn')
+//     btn.addEventListener('click', () => {
+//         const cardImg = card.querySelector('.new__img');
+//         const cardTitle = card.querySelector('.new__card__title');
+//         const cardText = card.querySelector('.new__card__text');
+//         const cardPrice = card.querySelector('.new__price');
+
+//         if (!cardImg || !cardTitle || !cardText || !cardPrice) return;
+
+//         const createLocalStorage = JSON.parse(localStorage.getItem('newBasketCard')) || [];
+
+//         const newBasketCard = {
+//             title: cardTitle.textContent,
+//             text: cardText.textContent,
+//             imgSrc: cardImg.getAttribute('src'),
+//             id: 'basket_card-' + Date.now(),
+//             price: cardPrice.textContent
+//         };
+
+//         createLocalStorage.push(newBasketCard);
+//         localStorage.setItem('newBasketCard', JSON.stringify(createLocalStorage));
+
+//         renderBasketCards();
+//         console.log('Товар добавлен в корзину');
+//     }
+// )
+// })
 
 // Рендер и создание карты товара
 function renderBasketCards() {
@@ -359,7 +395,7 @@ document.addEventListener('click', (event) => {
             title: cardTitle.textContent,
             text: cardText.textContent,
             imgSrc: cardImg.getAttribute('src'),
-            id: 'basket_card-' + (createLocalStorage.length + 1),
+            id: 'basket_card-' + Date.now(),
             price: cardPrice.textContent
         };
 

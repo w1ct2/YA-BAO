@@ -976,14 +976,18 @@ input:focus, textarea:focus, select:focus {
     grid-template-rows: repeat(2, 1fr);
 
     max-width: 200px;
+    width: 100%;
     max-height: 100px;
     border-radius: 12px;
     margin-top: 30px;
     padding: 14px 17px;
     align-items: center;
-    column-gap: 25px;
+    column-gap: 20px;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+
 }
-.new__card__first {
+.new__card:first-child {
     position: relative;
 }
 .onion {
@@ -995,8 +999,13 @@ input:focus, textarea:focus, select:focus {
     width: auto;
 }
 .new__card__title {
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 700;
+    overflow: hidden;
+    max-height: 49px;
+}
+.new__card__text {
+    display: none;
 }
 .new__img {
     max-width: 70px;
@@ -1010,6 +1019,8 @@ input:focus, textarea:focus, select:focus {
 .new__price {
     color: rgba(255, 46, 101, 1);
     font-weight: 600;
+    font-size: 15px;
+    overflow: hidden;
 }
 @media (max-width: 1000px) {
     .new {
@@ -1028,11 +1039,20 @@ input:focus, textarea:focus, select:focus {
         grid-template-rows: repeat(2, 1fr);
         margin-top: 15px;
         column-gap: 15px;
+        margin: 0 auto;
+        z-index: 2;
     }
     .onion {
         height: 120px;
         bottom: -10px;
         left: -15px;
+        z-index: 1;
+    }
+    .new__card:last-child {
+        margin-left: auto;
+    }
+    .new__card:nth-child(2) {
+        margin-left: auto;
     }
 }
 @media (max-width: 700px) {
@@ -1043,11 +1063,23 @@ input:focus, textarea:focus, select:focus {
         font-size: 20px;
         border-top: 1.5px solid rgba(105, 111, 122, 1);
     }
+    .new__container {
+        padding: 0 10px;
+    }
+    .new__card {
+        margin: 0%;
+    }
+    .new__card:last-child {
+        margin-left: auto;
+    }
+    .new__card:nth-child(2) {
+        margin-left: auto;
+    }
     .new__card {
         column-gap: 10px;
     }
     .new__card__title {
-        font-size: 16px;
+        font-size: 12px;
     }
     .new__price {
         font-size: 14px;
