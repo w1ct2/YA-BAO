@@ -635,6 +635,7 @@ input:focus, textarea:focus, select:focus {
     line-height: 14px;
     display: flex;
     align-items: flex-end;
+    overflow: hidden;
 }
 .basket__bottom__price {
     color: rgba(255, 46, 101, 1);
@@ -1272,6 +1273,7 @@ input:focus, textarea:focus, select:focus {
 }
 .purchase__page.active {
     display: flex;
+
 }
 @keyframes testTwo {
     0% {
